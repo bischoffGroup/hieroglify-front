@@ -47,7 +47,7 @@ export default {
       .catch(error => {
         commit.dispatch(
           "DISPATCH_NOTIFY",
-          { message: response, type: "error", title: error },
+          { message: "ERROR!", type: "error", title: error },
           { root: true }
         );
       })

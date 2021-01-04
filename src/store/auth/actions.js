@@ -1,6 +1,6 @@
 import { NAME_TOKEN } from "@/configs/config";
 import webservice, { setToken } from "../../services/webservice";
-import { webservice as web2, setToken as st2 } from "@/services";
+import { setToken as st2 } from "@/services";
 const RESOURCE = "login";
 export default {
   theme(context, theme) {
@@ -34,7 +34,7 @@ export default {
     return new Promise((resolve, reject) => {
       if (!accessToken) {
         context.commit("AUTH_USER_LOGOUT");
-        return reject();
+        reject(new Error("[TOKEN UNDEFINED]"));
       }
       setToken(accessToken);
       st2(accessToken);
