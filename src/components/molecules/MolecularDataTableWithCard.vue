@@ -1,13 +1,41 @@
 <template>
   <atomic-card-default>
+    <template v-slot:cardTitle>
+      <slot name="titleDataTable">
+        <atomic-card-text>
+          <template #cardTextContent>
+            <v-row>
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <p class="title text-uppercase">{{ title }}</p>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <molecular-search
+                  :clear-model-after-search="false"
+                  v-bind="{ outlined: true }"
+                  :namespace="namespace"
+                  :label="searchLabel"
+                  :division="division"
+                  :field-path="`search${division}`"
+                />
+              </div>
+            </v-row>
+          </template>
+        </atomic-card-text>
+      </slot>
+    </template>
     <template v-slot:cardContent>
       <slot name="contentDataTable">
-        <atomic-data-table-default
-          :v-bind="{ height: 360, dense: true }"
-          :namespace="namespace"
-          :division="division"
-          :tag="tag"
-        />
+        <atomic-card-text>
+          <template #cardTextContent>
+            <atomic-data-table-default
+              :v-bind="{ height: 360, dense: true }"
+              :namespace="namespace"
+              :division="division"
+              :tag="tag"
+              class="elevation-1"
+            />
+          </template>
+        </atomic-card-text>
       </slot>
     </template>
   </atomic-card-default>
@@ -19,10 +47,33 @@ import AtomicCardDefault from "@/components/atoms/concrete/card/AtomicCardDefaul
 import { NamespacePropsMixin } from "@/mixins/NamespacePropsMixin";
 import { DivisionPropsMixin } from "@/mixins/DivisionPropsMixin";
 import { TagPropsMixin } from "@/mixins/TagPropsMixin";
+import AtomicCardText from "@/components/atoms/abstract/card/AtomicCardText";
+import MolecularSearch from "@/components/molecules/abstract/MolecularSearch";
 export default {
   name: "MolecularDataTableWithCard",
   mixins: [NamespacePropsMixin, DivisionPropsMixin, TagPropsMixin],
-  components: { AtomicCardDefault, AtomicDataTableDefault }
+  components: {
+    MolecularSearch,
+    AtomicCardText,
+    AtomicCardDefault,
+    AtomicDataTableDefault
+  },
+  props: {
+    title: {
+      type: String,
+      required: false,
+      default: () => {
+        return "DEFAULT TITLE";
+      }
+    },
+    searchLabel: {
+      type: String,
+      required: false,
+      default: () => {
+        return "DEFAULT SEARCH";
+      }
+    }
+  }
 };
 </script>
 

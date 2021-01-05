@@ -1,8 +1,10 @@
 <template>
   <v-container>
     <molecular-data-table-with-card
+      :search-label="search"
       :namespace="namespace"
       :division="division"
+      :title="title"
       :tag="tag"
     />
   </v-container>
@@ -19,7 +21,9 @@ export default {
       namespace: "from",
       division: "supplier",
       tag: "data",
-      actionName: FROM_SUPPLIERS_GENERATE_SUPPLIERS
+      actionName: FROM_SUPPLIERS_GENERATE_SUPPLIERS,
+      search: "Buscar Fornecedores",
+      title: "fornecedores"
     };
   },
   mounted() {

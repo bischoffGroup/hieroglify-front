@@ -1,6 +1,6 @@
 <template>
   <v-card-title v-bind="$attrs.vBind">
-    <slot name="cardTitleContent" />
+    <slot name="content" />
   </v-card-title>
 </template>
 

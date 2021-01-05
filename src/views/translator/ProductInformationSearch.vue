@@ -24,7 +24,7 @@ export default {
     MolecularSearchAddList
   },
   data: () => ({
-    pathToData: "translator.productInformation.data",
+    pathToData: "translator.productInformation.commonData",
     actionsToFiles: [
       {
         type: "xlsx",

@@ -12,13 +12,7 @@
 import AtomicCard from "@/components/atoms/abstract/card/AtomicCard";
 export default {
   name: "AtomicCardDefault",
-  components: { AtomicCard },
-  props: {
-    vBind: {
-      type: Object,
-      required: false
-    }
-  }
+  components: { AtomicCard }
 };
 </script>
 

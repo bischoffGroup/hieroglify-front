@@ -8,6 +8,7 @@ import log from "./log/log";
 import script from "./scripts/script";
 import depara from "@/store/depara/depara";
 import productInformation from "@/store/translator/productInformation/productInformation";
+import commonData from "@/store/defaultContext/commonData/commonData";
 import product from "@/store/translator/product/product";
 import productSize from "@/store/translator/productSize/productSize";
 import supplier from "@/store/from/supplier/supplier";
@@ -53,6 +54,12 @@ const store = new Vuex.Store({
       namespaced: true,
       modules: {
         systemTasks
+      }
+    },
+    defaultContext: {
+      namespaced: true,
+      modules: {
+        commonData
       }
     }
   }

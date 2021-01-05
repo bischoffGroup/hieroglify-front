@@ -3,7 +3,14 @@
     v-bind="{ ...$props, ...$attrs }"
     :headers="headers"
     :items="items"
-  />
+  >
+    <template #header>
+      <slot name="header" />
+    </template>
+    <template #footer>
+      <slot name="footer" />
+    </template>
+  </atomic-data-table>
 </template>
 
 <script>
@@ -21,6 +28,12 @@ export default {
     TagPropsMixin,
     valuesFromStoreMixin
   ],
+  props: {
+    vBind: {
+      type: Object,
+      required: false
+    }
+  },
   computed: {
     headers() {
       return this.getValueFromStoreWithStringPath(

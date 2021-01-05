@@ -10,14 +10,14 @@ import {
 } from "@/store/types/mutationTypes";
 
 export default {
-  async [DEFAULT_CHECKBOX](
+  [DEFAULT_CHECKBOX]: async function(
     { commit, dispatch },
     payload = { value: undefined, dto: undefined }
   ) {
     await changeTaskStatus(payload.dto._ID, payload.value);
     await dispatch(SYSTEM_TASK_GENERATE_TASKS, { root: true });
   },
-  async [SYSTEM_TASK_GENERATE_TASKS]({ commit }) {
+  [SYSTEM_TASK_GENERATE_TASKS]: async function({ commit }) {
     commit("LOADING", true, { root: true });
     const result = await getTasks();
     commit(SYSTEM_TASKS, result);

@@ -1,8 +1,8 @@
 <template>
   <v-text-field
-    v-bind="$attrs.vBind"
+    v-bind="{ ...$props, ...$attrs }"
     v-model="atomicTextFieldModel"
-    @change="change"
+    @input="input"
   />
 </template>
 
@@ -12,10 +12,20 @@ export default {
   data: () => ({
     atomicTextFieldModel: null
   }),
+  props: {
+    label: {
+      type: String,
+      required: true
+    },
+    clearModelAfterSearch: {
+      type: Boolean,
+      required: true
+    }
+  },
   methods: {
-    change() {
-      this.$emit("atomicTextFieldChange", this.atomicTextFieldModel);
-      this.atomicTextFieldModel = null;
+    input() {
+      this.$emit("atomicTextFieldInput", this.atomicTextFieldModel);
+      if (this.clearModelAfterSearch) this.atomicTextFieldModel = null;
     }
   }
 };
