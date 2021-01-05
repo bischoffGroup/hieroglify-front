@@ -8,8 +8,8 @@
 export default {
   props: {
     current: Number,
-    footer_inset: Boolean
-  }
+    footer_inset: Boolean,
+  },
 };
 </script>
 

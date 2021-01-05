@@ -5,18 +5,19 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
-import MolecularDataTableWithCard from "@/components/molecules/MolecularDataTableWithCard";
+import { mapActions } from 'vuex';
+import MolecularDataTableWithCard from '@/components/molecules/MolecularDataTableWithCard';
+
 export default {
-  name: "Material",
+  name: 'Material',
   components: { MolecularDataTableWithCard },
   mounted() {
     this.grouping();
   },
   methods: {
     ...mapActions({
-      grouping: "from/generateProductGroupings"
-    })
-  }
+      grouping: 'from/generateProductGroupings',
+    }),
+  },
 };
 </script>

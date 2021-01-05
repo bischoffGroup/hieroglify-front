@@ -10,20 +10,20 @@
   </v-container>
 </template>
 <script>
-import MolecularDataTableWithCard from "@/components/molecules/MolecularDataTableWithCard";
-import { FROM_SUPPLIERS_GENERATE_SUPPLIERS } from "@/store/types/actionTypes";
+import MolecularDataTableWithCard from '@/components/molecules/MolecularDataTableWithCard';
+import { FROM_SUPPLIERS_GENERATE_SUPPLIERS } from '@/store/types/actionTypes';
 
 export default {
-  name: "Supplier",
+  name: 'Supplier',
   components: { MolecularDataTableWithCard },
   data() {
     return {
-      namespace: "from",
-      division: "supplier",
-      tag: "data",
+      namespace: 'from',
+      division: 'supplier',
+      tag: 'data',
       actionName: FROM_SUPPLIERS_GENERATE_SUPPLIERS,
-      search: "Buscar Fornecedores",
-      title: "fornecedores"
+      search: 'Buscar Fornecedores',
+      title: 'fornecedores',
     };
   },
   mounted() {
@@ -32,10 +32,10 @@ export default {
   methods: {
     generateSuppliers() {
       this.$store.dispatch(
-        `${this.namespace}/${this.division}/${this.actionName}`
+        `${this.namespace}/${this.division}/${this.actionName}`,
       );
-    }
-  }
+    },
+  },
 };
 </script>
 

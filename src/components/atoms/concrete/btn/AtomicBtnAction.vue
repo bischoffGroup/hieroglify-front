@@ -17,47 +17,42 @@
 </template>
 
 <script>
-import AtomicButton from "@/components/atoms/abstract/btn/AtomicButton";
-import AtomicIcon from "@/components/atoms/abstract/icon/AtomicIcon";
+import AtomicButton from '@/components/atoms/abstract/btn/AtomicButton';
+import AtomicIcon from '@/components/atoms/abstract/icon/AtomicIcon';
+
 export default {
   components: { AtomicIcon, AtomicButton },
   props: {
     vBind: {
       type: Object,
-      required: false
+      required: false,
     },
     executeAction: {
       type: String,
-      required: true
+      required: true,
     },
     valueToAction: {
-      required: false
+      required: false,
     },
     pathToValues: {
       type: String,
       required: false,
-      default: () => {
-        return undefined;
-      }
+      default: () => undefined,
     },
     displayWithConditionPopulated: {
       type: Boolean,
-      required: true
+      required: true,
     },
     title: {
       type: String,
       required: false,
-      default: () => {
-        return undefined;
-      }
+      default: () => undefined,
     },
     icon: {
       type: String,
       required: false,
-      default: () => {
-        return undefined;
-      }
-    }
+      default: () => undefined,
+    },
   },
   computed: {
     display() {
@@ -66,31 +61,27 @@ export default {
     },
     titleValidation() {
       return this.pathToValues !== undefined && this.valueToAction !== undefined
-        ? "ERROR"
+        ? 'ERROR'
         : this.title;
-    }
+    },
   },
   methods: {
     execute() {
-      if (this.titleValidation !== "ERROR") {
+      if (this.titleValidation !== 'ERROR') {
         if (this.valueToAction !== undefined) {
           this.$store.dispatch(`${this.executeAction}`, this.valueToAction);
+        } else if (this.pathToValues !== undefined) {
+          const values = this.getValueFromStoreWithPath();
+          this.$store.dispatch(`${this.executeAction}`, values);
         } else {
-          if (this.pathToValues !== undefined) {
-            const values = this.getValueFromStoreWithPath();
-            this.$store.dispatch(`${this.executeAction}`, values);
-          } else {
-            this.$store.dispatch(`${this.executeAction}`);
-          }
+          this.$store.dispatch(`${this.executeAction}`);
         }
       }
     },
     getValueFromStoreWithPath() {
-      return this.pathToValues.split(".").reduce((o, k) => {
-        return o && o[k];
-      }, this.$store.state);
-    }
-  }
+      return this.pathToValues.split('.').reduce((o, k) => o && o[k], this.$store.state);
+    },
+  },
 };
 </script>
 

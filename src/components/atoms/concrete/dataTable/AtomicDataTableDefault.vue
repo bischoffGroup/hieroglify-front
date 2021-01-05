@@ -14,43 +14,44 @@
 </template>
 
 <script>
-import AtomicDataTable from "@/components/atoms/abstract/dataTable/AtomicDataTable";
-import { NamespacePropsMixin } from "@/mixins/NamespacePropsMixin";
-import { DivisionPropsMixin } from "@/mixins/DivisionPropsMixin";
-import { TagPropsMixin } from "@/mixins/TagPropsMixin";
-import valuesFromStoreMixin from "@/mixins/valuesFromStoreMixin";
+import AtomicDataTable from '@/components/atoms/abstract/dataTable/AtomicDataTable';
+import { NamespacePropsMixin } from '@/mixins/NamespacePropsMixin';
+import { DivisionPropsMixin } from '@/mixins/DivisionPropsMixin';
+import { TagPropsMixin } from '@/mixins/TagPropsMixin';
+import valuesFromStoreMixin from '@/mixins/valuesFromStoreMixin';
+
 export default {
-  name: "AtomicDataTableDefault",
+  name: 'AtomicDataTableDefault',
   components: { AtomicDataTable },
   mixins: [
     NamespacePropsMixin,
     DivisionPropsMixin,
     TagPropsMixin,
-    valuesFromStoreMixin
+    valuesFromStoreMixin,
   ],
   props: {
     vBind: {
       type: Object,
-      required: false
-    }
+      required: false,
+    },
   },
   computed: {
     headers() {
       return this.getValueFromStoreWithStringPath(
-        `${this.namespace}.${this.division}.columnNames`
+        `${this.namespace}.${this.division}.columnNames`,
       );
     },
     items() {
       return this.getValueFromStoreWithStringPath(
-        `${this.namespace}.${this.division}.data`
+        `${this.namespace}.${this.division}.data`,
       );
-    }
+    },
   },
   methods: {
     isNumber(value) {
       return value.match(/^[0-9]+$/) !== null;
-    }
-  }
+    },
+  },
 };
 </script>
 

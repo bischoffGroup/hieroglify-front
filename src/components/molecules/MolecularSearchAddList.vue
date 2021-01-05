@@ -68,15 +68,16 @@
 </template>
 
 <script>
-import AtomicCardTitle from "@/components/atoms/abstract/card/AtomicCardTitle";
-import AtomicCardText from "@/components/atoms/abstract/card/AtomicCardText";
-import AtomicListDefault from "@/components/atoms/concrete/list/AtomicListDefault/AtomicListDefault";
-import AtomicTextFieldList from "@/components/atoms/concrete/textField/AtomicTextFieldList";
-import AtomicCardAction from "@/components/atoms/abstract/card/AtomicCardAction";
-import AtomicBtnAction from "@/components/atoms/concrete/btn/AtomicBtnAction";
-import AtomicCardDefault from "@/components/atoms/concrete/card/AtomicCardDefault";
+import AtomicCardTitle from '@/components/atoms/abstract/card/AtomicCardTitle';
+import AtomicCardText from '@/components/atoms/abstract/card/AtomicCardText';
+import AtomicListDefault from '@/components/atoms/concrete/list/AtomicListDefault/AtomicListDefault';
+import AtomicTextFieldList from '@/components/atoms/concrete/textField/AtomicTextFieldList';
+import AtomicCardAction from '@/components/atoms/abstract/card/AtomicCardAction';
+import AtomicBtnAction from '@/components/atoms/concrete/btn/AtomicBtnAction';
+import AtomicCardDefault from '@/components/atoms/concrete/card/AtomicCardDefault';
+
 export default {
-  name: "MolecularSearchAddList",
+  name: 'MolecularSearchAddList',
   components: {
     AtomicCardDefault,
     AtomicBtnAction,
@@ -84,18 +85,18 @@ export default {
     AtomicTextFieldList,
     AtomicCardText,
     AtomicCardTitle,
-    AtomicListDefault
+    AtomicListDefault,
   },
   props: {
     title: {
       type: String,
-      required: false
+      required: false,
     },
     action: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
 

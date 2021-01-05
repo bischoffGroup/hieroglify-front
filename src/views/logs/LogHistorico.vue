@@ -11,14 +11,15 @@
   </div>
 </template>
 <script>
-import ShowHistoricoImportacao from "../../components/log/ShowHistoricoImportacao";
+import ShowHistoricoImportacao from '../../components/log/ShowHistoricoImportacao';
+
 export default {
   components: {
-    "show-historico-component": ShowHistoricoImportacao
+    'show-historico-component': ShowHistoricoImportacao,
   },
   data: () => ({
     historico: [],
-    datas: []
+    datas: [],
   }),
   mounted() {
     this.loadLogImportacoesHistorico();
@@ -26,23 +27,21 @@ export default {
   methods: {
     loadLogImportacoesHistorico() {
       this.$store
-        .dispatch("loadLogImportacoesHistorico")
-        .then(response => {
+        .dispatch('loadLogImportacoesHistorico')
+        .then((response) => {
           this.datas = response.data.success.datas_importacoes;
           this.historico = response.data.success.produtos_importados.map(
-            function(e) {
-              return e;
-            }
+            (e) => e,
           );
         })
         .catch(() => {
-          this.$emit("alerta", {
-            type: "error",
-            text: "Erro na busca de históricos"
+          this.$emit('alerta', {
+            type: 'error',
+            text: 'Erro na busca de históricos',
           });
         });
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped></style>

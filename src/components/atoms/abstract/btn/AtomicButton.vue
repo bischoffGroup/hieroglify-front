@@ -6,13 +6,13 @@
 
 <script>
 export default {
-  name: "AtomicButton",
+  name: 'AtomicButton',
   props: {},
   methods: {
     click() {
-      this.$emit("atomicBtnClick");
-    }
-  }
+      this.$emit('atomicBtnClick');
+    },
+  },
 };
 </script>
 

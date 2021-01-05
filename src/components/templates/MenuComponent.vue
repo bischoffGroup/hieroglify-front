@@ -142,10 +142,10 @@ export default {
   methods: {
     push(name) {
       if (name !== this.$router.history.current.name) {
-        console.log("foi", name);
-        this.$router.push({ name: name });
+        console.log('foi', name);
+        this.$router.push({ name });
       }
-    }
-  }
+    },
+  },
 };
 </script>

@@ -1,8 +1,11 @@
+import { setDeepValueByPath } from '@/utils/objUtils';
+
 export default {
   setValueFromPath(state, payload = { path: undefined, value: undefined }) {
+    let newPath = '';
     if (Array.isArray(payload.path)) {
-      payload.path = payload.path.join(".");
+      newPath = payload.path.join('.');
     }
-    state = setDeepValueByPath(state, payload.path, payload.value);
-  }
+    setDeepValueByPath(state, newPath, payload.value);
+  },
 };

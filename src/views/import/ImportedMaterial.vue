@@ -5,10 +5,11 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
-import MolecularDataTableWithCard from "@/components/molecules/MolecularDataTableWithCard";
+import { mapActions } from 'vuex';
+import MolecularDataTableWithCard from '@/components/molecules/MolecularDataTableWithCard';
+
 export default {
-  name: "Material",
+  name: 'Material',
   components: { MolecularDataTableWithCard },
   mounted() {
     this.clear();
@@ -16,9 +17,9 @@ export default {
   },
   methods: {
     ...mapActions({
-      importedMaterials: "import/material/generateImportedMaterials",
-      clear: "import/material/clearState"
-    })
-  }
+      importedMaterials: 'import/material/generateImportedMaterials',
+      clear: 'import/material/clearState',
+    }),
+  },
 };
 </script>

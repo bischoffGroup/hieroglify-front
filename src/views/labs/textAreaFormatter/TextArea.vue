@@ -32,25 +32,26 @@
 </template>
 
 <script>
-import AtomicPreDefault from "@/components/atoms/concrete/pre/AtomicPreDefault";
-import MolecularNotifySnackBar from "@/components/molecules/MolecularNotifySnackBar";
+import AtomicPreDefault from '@/components/atoms/concrete/pre/AtomicPreDefault';
+import MolecularNotifySnackBar from '@/components/molecules/MolecularNotifySnackBar';
+
 export default {
-  name: "TextArea",
+  name: 'TextArea',
   components: { MolecularNotifySnackBar, AtomicPreDefault },
   data() {
     return {
-      texto: "",
-      formatter: {}
+      texto: '',
+      formatter: {},
     };
   },
   methods: {
     changeData() {
-      this.formatter = JSON.stringify(this.texto.split("\n"));
+      this.formatter = JSON.stringify(this.texto.split('\n'));
     },
     clear() {
-      this.texto = "";
-    }
-  }
+      this.texto = '';
+    },
+  },
 };
 </script>
 

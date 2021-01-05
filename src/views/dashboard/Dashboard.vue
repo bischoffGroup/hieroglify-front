@@ -4,16 +4,17 @@
   </v-container>
 </template>
 <script>
-import MolecularTasks from "@/components/molecules/concrete/MolecularTasks";
-import { SYSTEM_TASK_GENERATE_TASKS } from "@/store/types/actionTypes";
+import MolecularTasks from '@/components/molecules/concrete/MolecularTasks';
+import { SYSTEM_TASK_GENERATE_TASKS } from '@/store/types/actionTypes';
+
 export default {
   components: { MolecularTasks },
   data() {
     return {
-      namespace: "system",
-      division: "systemTasks",
-      tag: "data",
-      actionName: SYSTEM_TASK_GENERATE_TASKS
+      namespace: 'system',
+      division: 'systemTasks',
+      tag: 'data',
+      actionName: SYSTEM_TASK_GENERATE_TASKS,
     };
   },
   mounted() {
@@ -22,9 +23,9 @@ export default {
   methods: {
     generateTasks() {
       this.$store.dispatch(
-        `${this.namespace}/${this.division}/${this.actionName}`
+        `${this.namespace}/${this.division}/${this.actionName}`,
       );
-    }
-  }
+    },
+  },
 };
 </script>

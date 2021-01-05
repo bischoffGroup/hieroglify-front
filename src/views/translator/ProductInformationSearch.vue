@@ -16,22 +16,23 @@
   </v-container>
 </template>
 <script>
-import MolecularSearchAddList from "@/components/molecules/MolecularSearchAddList";
-import MolecularDataTableWithCard from "@/components/molecules/MolecularDataTableWithCard";
+import MolecularSearchAddList from '@/components/molecules/MolecularSearchAddList';
+import MolecularDataTableWithCard from '@/components/molecules/MolecularDataTableWithCard';
+
 export default {
   components: {
     MolecularDataTableWithCard,
-    MolecularSearchAddList
+    MolecularSearchAddList,
   },
   data: () => ({
-    pathToData: "translator.productInformation.commonData",
+    pathToData: 'translator.productInformation.commonData',
     actionsToFiles: [
       {
-        type: "xlsx",
-        action: "translator/productsInformationXlsx"
-      }
-    ]
-  })
+        type: 'xlsx',
+        action: 'translator/productsInformationXlsx',
+      },
+    ],
+  }),
 };
 </script>
 

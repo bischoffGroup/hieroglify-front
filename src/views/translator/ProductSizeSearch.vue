@@ -15,11 +15,12 @@
 </template>
 
 <script>
-import MolecularSearchAddList from "@/components/molecules/MolecularSearchAddList";
-import MolecularDataTableWithCard from "@/components/molecules/MolecularDataTableWithCard";
+import MolecularSearchAddList from '@/components/molecules/MolecularSearchAddList';
+import MolecularDataTableWithCard from '@/components/molecules/MolecularDataTableWithCard';
+
 export default {
-  name: "ProductSearch",
-  components: { MolecularDataTableWithCard, MolecularSearchAddList }
+  name: 'ProductSearch',
+  components: { MolecularDataTableWithCard, MolecularSearchAddList },
 };
 </script>
 

@@ -25,27 +25,28 @@
   </v-container>
 </template>
 <script>
-import { mapActions, mapGetters } from "vuex";
-import MolecularDataTableWithCard from "@/components/molecules/MolecularDataTableWithCard";
+import { mapActions, mapGetters } from 'vuex';
+import MolecularDataTableWithCard from '@/components/molecules/MolecularDataTableWithCard';
+
 export default {
-  name: "NotImportedMaterial",
+  name: 'NotImportedMaterial',
   components: { MolecularDataTableWithCard },
   mounted() {
     this.notImportedMaterials();
   },
   computed: {
     ...mapGetters({
-      notImportedMaterialsCategories: "import/notImportedMaterialsCategories"
-    })
+      notImportedMaterialsCategories: 'import/notImportedMaterialsCategories',
+    }),
   },
   methods: {
     ...mapActions({
-      notImportedMaterials: "import/material/generateNotImportedMaterials"
+      notImportedMaterials: 'import/material/generateNotImportedMaterials',
     }),
     path(stringPath) {
       return `import.importMaterial.data.${stringPath}`;
-    }
-  }
+    },
+  },
 };
 </script>
 

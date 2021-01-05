@@ -4,13 +4,13 @@
 
 <script>
 export default {
-  name: "AtomicIcon",
+  name: 'AtomicIcon',
   props: {
     icon: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
 

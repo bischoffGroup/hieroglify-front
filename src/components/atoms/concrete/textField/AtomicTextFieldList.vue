@@ -6,25 +6,24 @@
 </template>
 
 <script>
-import AtomicTextField from "@/components/atoms/abstract/textField/AtomicTextField";
+import AtomicTextField from '@/components/atoms/abstract/textField/AtomicTextField';
+
 export default {
   components: { AtomicTextField },
   props: {
     vBind: {
       type: Object,
-      required: false
+      required: false,
     },
     executeAction: {
       type: String,
-      required: true
+      required: true,
     },
     pathToValues: {
       type: String,
       required: false,
-      default: () => {
-        return undefined;
-      }
-    }
+      default: () => undefined,
+    },
   },
   mounted() {
     this.clear();
@@ -34,9 +33,9 @@ export default {
       this.$store.dispatch(this.executeAction, result);
     },
     clear() {
-      this.$store.dispatch("clearSearchList");
-    }
-  }
+      this.$store.dispatch('clearSearchList');
+    },
+  },
 };
 </script>
 

@@ -158,22 +158,23 @@
   </div>
 </template>
 <script>
-import Bread from "./components/templates/Bread";
-import MenuComponent from "./components/templates/MenuComponent";
-import FooterComponent from "./components/templates/FooterComponent";
-import PreloaderComponent from "./components/templates/PreloaderComponent";
-import Login from "./views/auth/Login";
-import Alert from "./components/snacks/Alert";
-import MolecularNotifySnackBar from "@/components/molecules/MolecularNotifySnackBar";
+import MolecularNotifySnackBar from '@/components/molecules/MolecularNotifySnackBar';
+import Bread from './components/templates/Bread';
+import MenuComponent from './components/templates/MenuComponent';
+import FooterComponent from './components/templates/FooterComponent';
+import PreloaderComponent from './components/templates/PreloaderComponent';
+import Login from './views/auth/Login';
+import Alert from './components/snacks/Alert';
+
 export default {
   components: {
     MolecularNotifySnackBar,
     Alert,
-    "footer-component": FooterComponent,
-    "preloader-component": PreloaderComponent,
+    'footer-component': FooterComponent,
+    'preloader-component': PreloaderComponent,
     login: Login,
-    "menu-component": MenuComponent,
-    "bread-component": Bread
+    'menu-component': MenuComponent,
+    'bread-component': Bread,
   },
   computed: {
     me() {
@@ -181,10 +182,10 @@ export default {
     },
     version() {
       return this.$store.state.version.version;
-    }
+    },
   },
   mounted() {
-    this.$store.dispatch("loadVersion");
+    this.$store.dispatch('loadVersion');
     /* this.$socket.$subscribe('notification', payload => {
                 if(payload.status === 200){
                     this.importacoes_success = this.importacoes_success + 1;
@@ -202,27 +203,27 @@ export default {
     importacoes_errors: 0,
     dialog: false,
     current: new Date().getFullYear(),
-    drawers: ["Default (no property)", "Permanent", "Temporary"],
+    drawers: ['Default (no property)', 'Permanent', 'Temporary'],
     primaryDrawer: {
       model: null,
-      type: "default (no property)",
+      type: 'default (no property)',
       clipped: false,
       floating: false,
       mini: true,
-      expandOnHover: true
+      expandOnHover: true,
     },
     footer: {
-      inset: false
-    }
+      inset: false,
+    },
   }),
   methods: {
     logout() {
-      this.$store.dispatch("logout");
+      this.$store.dispatch('logout');
     },
     alerta(ev) {
       this.$refs.alert.show(ev.type, ev.text);
-    }
-  }
+    },
+  },
 };
 </script>
 <style>

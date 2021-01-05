@@ -22,22 +22,22 @@
 <script>
 export default {
   props: {
-    erros: Array
+    erros: Array,
   },
   data: () => ({
-    search: "",
+    search: '',
     headers: [
       {
-        text: "Id",
-        align: "start",
-        value: "id"
+        text: 'Id',
+        align: 'start',
+        value: 'id',
       },
-      { text: "Protocolo", sortable: true, value: "request_id" },
-      { text: "Erro", value: "erro" },
-      { text: "Data", value: "data" },
-      { text: "created_at", value: "created_at" },
-      { text: "updated_at", value: "updated_at" }
-    ]
-  })
+      { text: 'Protocolo', sortable: true, value: 'request_id' },
+      { text: 'Erro', value: 'erro' },
+      { text: 'Data', value: 'data' },
+      { text: 'created_at', value: 'created_at' },
+      { text: 'updated_at', value: 'updated_at' },
+    ],
+  }),
 };
 </script>

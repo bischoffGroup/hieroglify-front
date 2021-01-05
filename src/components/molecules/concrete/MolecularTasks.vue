@@ -57,21 +57,21 @@
   </atomic-card-default>
 </template>
 <script>
-import AtomicCardDefault from "@/components/atoms/concrete/card/AtomicCardDefault";
-import AtomicCardTitle from "@/components/atoms/abstract/card/AtomicCardTitle";
-import AtomicCardText from "@/components/atoms/abstract/card/AtomicCardText";
-import AtomicListDefault from "@/components/atoms/concrete/list/AtomicListDefault/AtomicListDefault";
-import { NamespacePropsMixin } from "@/mixins/NamespacePropsMixin";
-import { DivisionPropsMixin } from "@/mixins/DivisionPropsMixin";
-import { TagPropsMixin } from "@/mixins/TagPropsMixin";
-import AtomicListItem from "@/components/atoms/abstract/list/AtomicListItem";
-import AtomicListItemContent from "@/components/atoms/abstract/list/AtomicListItemContent";
-import AtomicListItemTitle from "@/components/atoms/abstract/list/AtomicListItemTitle";
-import AtomicListItemSubtitle from "@/components/atoms/abstract/list/AtomicListItemSubtitle";
-import AtomicCheckboxDefault from "@/components/atoms/concrete/checkbox/AtomicCheckboxDefault";
+import AtomicCardDefault from '@/components/atoms/concrete/card/AtomicCardDefault';
+import AtomicCardTitle from '@/components/atoms/abstract/card/AtomicCardTitle';
+import AtomicCardText from '@/components/atoms/abstract/card/AtomicCardText';
+import AtomicListDefault from '@/components/atoms/concrete/list/AtomicListDefault/AtomicListDefault';
+import { NamespacePropsMixin } from '@/mixins/NamespacePropsMixin';
+import { DivisionPropsMixin } from '@/mixins/DivisionPropsMixin';
+import { TagPropsMixin } from '@/mixins/TagPropsMixin';
+import AtomicListItem from '@/components/atoms/abstract/list/AtomicListItem';
+import AtomicListItemContent from '@/components/atoms/abstract/list/AtomicListItemContent';
+import AtomicListItemTitle from '@/components/atoms/abstract/list/AtomicListItemTitle';
+import AtomicListItemSubtitle from '@/components/atoms/abstract/list/AtomicListItemSubtitle';
+import AtomicCheckboxDefault from '@/components/atoms/concrete/checkbox/AtomicCheckboxDefault';
 
 export default {
-  name: "MolecularTasks",
+  name: 'MolecularTasks',
   components: {
     AtomicCheckboxDefault,
     AtomicListItemSubtitle,
@@ -81,10 +81,10 @@ export default {
     AtomicListDefault,
     AtomicCardText,
     AtomicCardTitle,
-    AtomicCardDefault
+    AtomicCardDefault,
   },
   mixins: [NamespacePropsMixin, DivisionPropsMixin, TagPropsMixin],
-  computed: {}
+  computed: {},
 };
 </script>
 

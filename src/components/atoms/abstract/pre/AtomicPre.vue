@@ -1,4 +1,4 @@
-<template>
+ <template>
   <pre v-bind="{ ...$attrs.vBind, ...$attrs.vBindBtn }">
         <slot name="preContent"></slot>
     </pre>
@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  name: "AtomicPre",
+  name: 'AtomicPre',
   props: {},
-  methods: {}
+  methods: {},
 };
 </script>

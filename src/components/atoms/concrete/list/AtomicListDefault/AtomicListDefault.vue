@@ -26,30 +26,31 @@
 </template>
 
 <script>
-import AtomicList from "@/components/atoms/abstract/list/AtomicList";
-import { NamespacePropsMixin } from "@/mixins/NamespacePropsMixin";
-import { DivisionPropsMixin } from "@/mixins/DivisionPropsMixin";
-import { TagPropsMixin } from "@/mixins/TagPropsMixin";
-import AtomicListItem from "@/components/atoms/abstract/list/AtomicListItem";
-import AtomicCardDefault from "@/components/atoms/concrete/card/AtomicCardDefault";
+import AtomicList from '@/components/atoms/abstract/list/AtomicList';
+import { NamespacePropsMixin } from '@/mixins/NamespacePropsMixin';
+import { DivisionPropsMixin } from '@/mixins/DivisionPropsMixin';
+import { TagPropsMixin } from '@/mixins/TagPropsMixin';
+import AtomicListItem from '@/components/atoms/abstract/list/AtomicListItem';
+import AtomicCardDefault from '@/components/atoms/concrete/card/AtomicCardDefault';
+
 export default {
-  name: "AtomicListDefault",
+  name: 'AtomicListDefault',
   components: {
     AtomicCardDefault,
     AtomicListItem,
-    AtomicList
+    AtomicList,
   },
   mixins: [NamespacePropsMixin, DivisionPropsMixin, TagPropsMixin],
   props: {
     vBind: {
       type: Object,
-      required: false
-    }
+      required: false,
+    },
   },
   computed: {
     list() {
       return this.$store.state[this.namespace][this.division][this.tag];
-    }
+    },
   },
   methods: {
     splitObject(itemProp) {
@@ -57,8 +58,8 @@ export default {
     },
     formatItem(key, item) {
       return `${key}: ${item[key]}`;
-    }
-  }
+    },
+  },
 };
 </script>
 

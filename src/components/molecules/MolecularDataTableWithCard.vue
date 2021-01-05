@@ -42,38 +42,35 @@
 </template>
 
 <script>
-import AtomicDataTableDefault from "@/components/atoms/concrete/dataTable/AtomicDataTableDefault";
-import AtomicCardDefault from "@/components/atoms/concrete/card/AtomicCardDefault";
-import { NamespacePropsMixin } from "@/mixins/NamespacePropsMixin";
-import { DivisionPropsMixin } from "@/mixins/DivisionPropsMixin";
-import { TagPropsMixin } from "@/mixins/TagPropsMixin";
-import AtomicCardText from "@/components/atoms/abstract/card/AtomicCardText";
-import MolecularSearch from "@/components/molecules/abstract/MolecularSearch";
+import AtomicDataTableDefault from '@/components/atoms/concrete/dataTable/AtomicDataTableDefault';
+import AtomicCardDefault from '@/components/atoms/concrete/card/AtomicCardDefault';
+import { NamespacePropsMixin } from '@/mixins/NamespacePropsMixin';
+import { DivisionPropsMixin } from '@/mixins/DivisionPropsMixin';
+import { TagPropsMixin } from '@/mixins/TagPropsMixin';
+import AtomicCardText from '@/components/atoms/abstract/card/AtomicCardText';
+import MolecularSearch from '@/components/molecules/abstract/MolecularSearch';
+
 export default {
-  name: "MolecularDataTableWithCard",
+  name: 'MolecularDataTableWithCard',
   mixins: [NamespacePropsMixin, DivisionPropsMixin, TagPropsMixin],
   components: {
     MolecularSearch,
     AtomicCardText,
     AtomicCardDefault,
-    AtomicDataTableDefault
+    AtomicDataTableDefault,
   },
   props: {
     title: {
       type: String,
       required: false,
-      default: () => {
-        return "DEFAULT TITLE";
-      }
+      default: () => 'DEFAULT TITLE',
     },
     searchLabel: {
       type: String,
       required: false,
-      default: () => {
-        return "DEFAULT SEARCH";
-      }
-    }
-  }
+      default: () => 'DEFAULT SEARCH',
+    },
+  },
 };
 </script>
 

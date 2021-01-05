@@ -10,26 +10,26 @@
 </template>
 
 <script>
-import { NamespacePropsMixin } from "@/mixins/NamespacePropsMixin";
-import { DivisionPropsMixin } from "@/mixins/DivisionPropsMixin";
-import { TagPropsMixin } from "@/mixins/TagPropsMixin";
-import { FieldPathPropsMixin } from "@/mixins/FieldPathPropsMixin";
-import valuesFromStoreMixin from "@/mixins/valuesFromStoreMixin";
+import { NamespacePropsMixin } from '@/mixins/NamespacePropsMixin';
+import { DivisionPropsMixin } from '@/mixins/DivisionPropsMixin';
+import { TagPropsMixin } from '@/mixins/TagPropsMixin';
+import { FieldPathPropsMixin } from '@/mixins/FieldPathPropsMixin';
+import valuesFromStoreMixin from '@/mixins/valuesFromStoreMixin';
 
 export default {
-  name: "AtomicCheckbox",
+  name: 'AtomicCheckbox',
   props: {
     label: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   mixins: [
     NamespacePropsMixin,
     DivisionPropsMixin,
     TagPropsMixin,
     FieldPathPropsMixin,
-    valuesFromStoreMixin
+    valuesFromStoreMixin,
   ],
   data() {
     return {};
@@ -40,10 +40,10 @@ export default {
     },
     model() {
       return this.getValueFromStoreWithStringPath(
-        `${this.namespace}.${this.division}.${this.tag}.${this.fieldPath}`
+        `${this.namespace}.${this.division}.${this.tag}.${this.fieldPath}`,
       );
-    }
-  }
+    },
+  },
 };
 </script>
 

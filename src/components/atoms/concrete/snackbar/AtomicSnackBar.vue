@@ -10,26 +10,27 @@
   </atomic-snack-bar>
 </template>
 <script>
-import AtomicSnackBar from "@/components/atoms/abstract/snackbar/AtomicSnackBar";
+import AtomicSnackBar from '@/components/atoms/abstract/snackbar/AtomicSnackBar';
+
 export default {
   components: { AtomicSnackBar },
   props: {
     vBind: {
       type: Object,
-      required: false
+      required: false,
     },
     text: {
       type: String,
-      required: true
+      required: true,
     },
     snack: {
       type: Boolean,
-      required: true
+      required: true,
     },
     timeout: {
       type: Number,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>

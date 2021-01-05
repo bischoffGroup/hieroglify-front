@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "AtomicListItemContent"
+  name: 'AtomicListItemContent',
 };
 </script>
 

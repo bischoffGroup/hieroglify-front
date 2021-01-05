@@ -8,26 +8,26 @@
 
 <script>
 export default {
-  name: "AtomicTextField",
+  name: 'AtomicTextField',
   data: () => ({
-    atomicTextFieldModel: null
+    atomicTextFieldModel: null,
   }),
   props: {
     label: {
       type: String,
-      required: true
+      required: true,
     },
     clearModelAfterSearch: {
       type: Boolean,
-      required: true
-    }
+      required: true,
+    },
   },
   methods: {
     input() {
-      this.$emit("atomicTextFieldInput", this.atomicTextFieldModel);
+      this.$emit('atomicTextFieldInput', this.atomicTextFieldModel);
       if (this.clearModelAfterSearch) this.atomicTextFieldModel = null;
-    }
-  }
+    },
+  },
 };
 </script>
 

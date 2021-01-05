@@ -7,18 +7,18 @@
 </template>
 
 <script>
-import { NamespacePropsMixin } from "@/mixins/NamespacePropsMixin";
-import { DivisionPropsMixin } from "@/mixins/DivisionPropsMixin";
-import { TagPropsMixin } from "@/mixins/TagPropsMixin";
+import { NamespacePropsMixin } from '@/mixins/NamespacePropsMixin';
+import { DivisionPropsMixin } from '@/mixins/DivisionPropsMixin';
+import { TagPropsMixin } from '@/mixins/TagPropsMixin';
 
 export default {
-  name: "AtomicList",
+  name: 'AtomicList',
   mixins: [NamespacePropsMixin, DivisionPropsMixin, TagPropsMixin],
   computed: {
     list() {
       return this.$store.state[this.namespace][this.division][this.tag];
-    }
-  }
+    },
+  },
 };
 </script>
 

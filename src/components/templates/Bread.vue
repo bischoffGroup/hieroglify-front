@@ -7,22 +7,22 @@
 <script>
 export default {
   data: () => ({
-    items: []
+    items: [],
   }),
   watch: {
     $route() {
       this.items = [];
-      let rotas = this.$route.path.split("/");
+      const rotas = this.$route.path.split('/');
       rotas.shift();
-      rotas.forEach(e => {
+      rotas.forEach((e) => {
         this.items.push({
           text: e.toUpperCase(),
           disable: true,
-          href: ""
+          href: '',
         });
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

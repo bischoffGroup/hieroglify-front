@@ -1,10 +1,12 @@
-import { GENERIC_VALUE_FROM_PATH_SET } from "@/store/types/defaultContext/actionTypes";
+import { GENERIC_VALUE_FROM_PATH_SET } from '@/store/types/defaultContext/actionTypes';
 
 export default {
-  [GENERIC_VALUE_FROM_PATH_SET]: async function(
-    { commit },
-    payload = { path: undefined, value: undefined }
+  async [GENERIC_VALUE_FROM_PATH_SET](
+    { commit, rootState },
+    payload = { path: undefined, value: undefined },
   ) {
-    commit("setValueFromPath", payload);
-  }
+    // eslint-disable-next-line no-param-reassign
+    payload.state = rootState;
+    commit('setValueFromPath', payload);
+  },
 };

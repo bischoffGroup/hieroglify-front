@@ -11,17 +11,17 @@
 
 <script>
 export default {
-  name: "AtomicSnackBar",
+  name: 'AtomicSnackBar',
   props: {
     snack: {
       type: Boolean,
-      required: true
-    }
+      required: true,
+    },
     /* timeout: {
             type: Number,
             required: true
         } */
-  }
+  },
 };
 </script>
 

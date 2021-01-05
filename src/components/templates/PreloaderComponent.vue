@@ -7,13 +7,13 @@
 <script>
 export default {
   data: () => ({
-    absolute: true
+    absolute: true,
   }),
   computed: {
     overlay() {
       return this.$store.state.preloader.loading;
-    }
-  }
+    },
+  },
 };
 </script>
 

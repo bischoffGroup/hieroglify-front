@@ -46,27 +46,28 @@
   </v-app>
 </template>
 <script>
-import PreloaderComponent from "../../components/templates/PreloaderComponent";
-import Alert from "../../components/snacks/Alert";
+import PreloaderComponent from '../../components/templates/PreloaderComponent';
+import Alert from '../../components/snacks/Alert';
+
 export default {
   components: {
-    "preloader-component": PreloaderComponent,
-    Alert
+    'preloader-component': PreloaderComponent,
+    Alert,
   },
   data: () => ({
     valid: true,
-    password: "",
-    email: "",
-    passwordRules: [v => !!v || "Informe a senha!"],
+    password: '',
+    email: '',
+    passwordRules: [(v) => !!v || 'Informe a senha!'],
     emailRules: [
-      v => !!v || "Informe o e-mail!",
-      v => /.+@.+\..+/.test(v) || "O e-mail informado não é válido!"
-    ]
+      (v) => !!v || 'Informe o e-mail!',
+      (v) => /.+@.+\..+/.test(v) || 'O e-mail informado não é válido!',
+    ],
   }),
   computed: {
     version() {
       return this.$store.state.version.version;
-    }
+    },
   },
   methods: {
     validate() {
@@ -79,15 +80,15 @@ export default {
     },
     login() {
       this.$store
-        .dispatch("login", { email: this.email, password: this.password })
+        .dispatch('login', { email: this.email, password: this.password })
         .then(() => {
-          location.reload();
+          window.location.reload();
           // this.$router.push('dashboard').catch(error => {});
         })
-        .catch(error => {
-          this.$refs.alert.show("error", error.response.data.error);
+        .catch((error) => {
+          this.$refs.alert.show('error', error.response.data.error);
         });
-    }
-  }
+    },
+  },
 };
 </script>

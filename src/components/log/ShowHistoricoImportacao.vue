@@ -33,25 +33,25 @@
 export default {
   props: {
     importacoes: Array,
-    data: String
+    data: String,
   },
   computed: {
-    formatData: function() {
+    formatData() {
       return this.format(this.data);
-    }
+    },
   },
   data: () => ({
-    search: "",
+    search: '',
     headers: [
-      { text: "PRODUTO", sortable: true, value: "PRODUTO" },
-      { text: "DATA", sortable: false, value: "DATA_CADASTRAMENTO" }
-    ]
+      { text: 'PRODUTO', sortable: true, value: 'PRODUTO' },
+      { text: 'DATA', sortable: false, value: 'DATA_CADASTRAMENTO' },
+    ],
   }),
   methods: {
     format(data) {
-      let d = data.split("-");
-      return d[2] + "/" + d[1] + "/" + d[0];
-    }
-  }
+      const d = data.split('-');
+      return `${d[2]}/${d[1]}/${d[0]}`;
+    },
+  },
 };
 </script>

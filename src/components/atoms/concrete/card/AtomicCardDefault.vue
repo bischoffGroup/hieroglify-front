@@ -9,10 +9,11 @@
 </template>
 
 <script>
-import AtomicCard from "@/components/atoms/abstract/card/AtomicCard";
+import AtomicCard from '@/components/atoms/abstract/card/AtomicCard';
+
 export default {
-  name: "AtomicCardDefault",
-  components: { AtomicCard }
+  name: 'AtomicCardDefault',
+  components: { AtomicCard },
 };
 </script>
 

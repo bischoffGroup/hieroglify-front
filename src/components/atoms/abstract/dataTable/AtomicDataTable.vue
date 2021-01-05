@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import { AtomicTablePropsMixin } from "@/mixins/AtomicTablePropsMixin";
+import { AtomicTablePropsMixin } from '@/mixins/AtomicTablePropsMixin';
 
 export default {
-  name: "AtomicDataTable",
-  mixins: [AtomicTablePropsMixin]
+  name: 'AtomicDataTable',
+  mixins: [AtomicTablePropsMixin],
 };
 </script>
 

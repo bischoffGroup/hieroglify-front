@@ -7,35 +7,32 @@
 </template>
 
 <script>
-import validationRequirementsMixin from "@/mixins/validationRequirementsMixin";
-import valuesFromStoreMixin from "@/mixins/valuesFromStoreMixin";
-import AtomicPre from "@/components/atoms/abstract/pre/AtomicPre";
+import validationRequirementsMixin from '@/mixins/validationRequirementsMixin';
+import valuesFromStoreMixin from '@/mixins/valuesFromStoreMixin';
+import AtomicPre from '@/components/atoms/abstract/pre/AtomicPre';
+
 export default {
-  name: "AtomicPreDefault",
+  name: 'AtomicPreDefault',
   components: { AtomicPre },
   mixins: [validationRequirementsMixin, valuesFromStoreMixin],
   props: {
     vBind: {
       type: Object,
-      required: false
+      required: false,
     },
     pathToValues: {
       type: String,
       required: false,
-      default: () => {
-        return undefined;
-      }
+      default: () => undefined,
     },
     concreteValues: {
       required: false,
-      default: () => {
-        return undefined;
-      }
-    }
+      default: () => undefined,
+    },
   },
   data() {
     return {
-      validationRequirements: ["concreteValues", "pathToValues"]
+      validationRequirements: ['concreteValues', 'pathToValues'],
     };
   },
   computed: {
@@ -43,7 +40,7 @@ export default {
       return this.concreteValues === undefined
         ? this.getValueFromStoreWithPath()
         : this.concreteValues;
-    }
+    },
   },
   methods: {
     /* getValueFromStoreWithPath() {
@@ -51,7 +48,7 @@ export default {
                 return o && o[k]
             }, this.$store.state)
         }, */
-  }
+  },
 };
 </script>
 

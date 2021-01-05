@@ -26,28 +26,28 @@
 </template>
 
 <script>
-import MolecularDataTableWithCard from "@/components/molecules/MolecularDataTableWithCard";
-import { mapActions, mapGetters } from "vuex";
+import MolecularDataTableWithCard from '@/components/molecules/MolecularDataTableWithCard';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
-  name: "NotImportedProduct",
+  name: 'NotImportedProduct',
   components: { MolecularDataTableWithCard },
   mounted() {
     this.notImportedProducts();
   },
   computed: {
     ...mapGetters({
-      notImportedProductsCategories: "import/notImportedProductsCategories"
-    })
+      notImportedProductsCategories: 'import/notImportedProductsCategories',
+    }),
   },
   methods: {
     ...mapActions({
-      notImportedProducts: "import/product/generateNotImportedProducts"
+      notImportedProducts: 'import/product/generateNotImportedProducts',
     }),
     path(stringPath) {
       return `import.importProduct.data.${stringPath}`;
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -18,21 +18,21 @@
 <script>
 export default {
   data: () => ({
-    color: "",
-    mode: "",
-    text: "",
+    color: '',
+    mode: '',
+    text: '',
     timeout: 10000,
-    x: "right",
-    y: "top",
+    x: 'right',
+    y: 'top',
     snack: false,
-    vertical: true
+    vertical: true,
   }),
   methods: {
     show(color, text) {
       this.color = color;
       this.text = text;
       this.snack = true;
-    }
-  }
+    },
+  },
 };
 </script>

@@ -27,45 +27,44 @@
 </template>
 
 <script>
-import AtomicSpeedDialDefault from "@/components/atoms/concrete/speedDial/AtomicSpeedDialDefault";
-import AtomicBtnDefault from "@/components/atoms/concrete/btn/AtomicBtnDefault";
-import AtomicIcon from "@/components/atoms/abstract/icon/AtomicIcon";
-import AtomicBtnAction from "@/components/atoms/concrete/btn/AtomicBtnAction";
+import AtomicSpeedDialDefault from '@/components/atoms/concrete/speedDial/AtomicSpeedDialDefault';
+import AtomicBtnDefault from '@/components/atoms/concrete/btn/AtomicBtnDefault';
+import AtomicIcon from '@/components/atoms/abstract/icon/AtomicIcon';
+import AtomicBtnAction from '@/components/atoms/concrete/btn/AtomicBtnAction';
+
 export default {
-  name: "MolecularSpeedDialDownload",
+  name: 'MolecularSpeedDialDownload',
   components: {
     AtomicBtnAction,
     AtomicIcon,
     AtomicBtnDefault,
-    AtomicSpeedDialDefault
+    AtomicSpeedDialDefault,
   },
   props: {
     files: {
       type: Array,
-      required: true
+      required: true,
     },
     pathToData: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   methods: {
     translateIcons(type) {
       switch (type) {
-        case "xlsx":
-          return "far fa-file-excel";
+        case 'xlsx':
+          return 'far fa-file-excel';
       }
-      return "";
+      return '';
     },
     getValueFromStoreWithPath() {
-      const v = this.pathToData.split(".").reduce((o, k) => {
-        return o && o[k];
-      }, this.$store.state);
-      return v.map(e => {
+      const v = this.pathToData.split('.').reduce((o, k) => o && o[k], this.$store.state);
+      return v.map((e) => {
         e = e.COD;
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
