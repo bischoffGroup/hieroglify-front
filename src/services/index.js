@@ -5,6 +5,7 @@ import {
 import { getProducts } from "@/services/translator/productsService";
 import { getProductsSize } from "@/services/translator/productsSize";
 import { getGroupings } from "@/services/from/productsService";
+import { getSuppliers } from "@/services/from/FromService";
 import {
   getImportedProduct,
   createProductPrice
@@ -22,6 +23,7 @@ export {
   getNotImportedMaterial,
   createProductPrice,
   getImportedProduct,
+  getSuppliers,
   getProductsSize,
   getTasks,
   getGroupings,

@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import map from "./map";
-
 Vue.use(VueRouter);
 const router = new VueRouter({
   mode: "hash",
@@ -11,9 +10,6 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  console.log(to);
-  console.log(from);
-  console.log(next);
   next();
 });
 

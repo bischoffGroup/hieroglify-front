@@ -3,10 +3,10 @@
     <template v-slot:cardContent>
       <slot name="contentDataTable">
         <atomic-data-table-default
-          :path-to-values="pathToData"
           :v-bind="{ height: 360, dense: true }"
-          :clear-data-on-mounted="true"
-          :full-path="fullPathToData"
+          :namespace="namespace"
+          :division="division"
+          :tag="tag"
         />
       </slot>
     </template>
@@ -15,22 +15,14 @@
 
 <script>
 import AtomicDataTableDefault from "@/components/atoms/concrete/dataTable/AtomicDataTableDefault";
+import AtomicCardDefault from "@/components/atoms/concrete/card/AtomicCardDefault";
+import { NamespacePropsMixin } from "@/mixins/NamespacePropsMixin";
+import { DivisionPropsMixin } from "@/mixins/DivisionPropsMixin";
+import { TagPropsMixin } from "@/mixins/TagPropsMixin";
 export default {
   name: "MolecularDataTableWithCard",
-  components: { AtomicDataTableDefault },
-  props: {
-    pathToData: {
-      type: String,
-      required: true
-    },
-    fullPathToData: {
-      type: String,
-      required: false,
-      default: () => {
-        return undefined;
-      }
-    }
-  }
+  mixins: [NamespacePropsMixin, DivisionPropsMixin, TagPropsMixin],
+  components: { AtomicCardDefault, AtomicDataTableDefault }
 };
 </script>
 

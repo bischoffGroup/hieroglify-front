@@ -1,8 +1,12 @@
+import {
+  FROM_SUPPLIERS,
+  FROM_SUPPLIERS_COLUMNS
+} from "@/store/types/mutationTypes";
 export default {
-  PRODUCTS_GROUPINGS(state, groupings) {
-    state.data = groupings;
+  [FROM_SUPPLIERS](state, tasks) {
+    state.data = tasks;
   },
-  PRODUCTS_GROUPINGS_COLUMNS(state) {
+  [FROM_SUPPLIERS_COLUMNS](state) {
     state.columnNames =
       state.data.length === 0
         ? []

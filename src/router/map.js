@@ -11,6 +11,14 @@ export default [
       component: () => import("../views/labs/textAreaFormatter/TextArea")
     }
   ]),
+  ...withPrefix("/depara", [
+    {
+      path: "fornecedores",
+      name: "from.suppliers",
+      meta: { auth: true },
+      component: () => import("../views/from/Supplier")
+    }
+  ]),
   ...withPrefix("/importacoes", [
     ...withPrefix("artigos/produtos", [
       {
@@ -45,10 +53,7 @@ export default [
     path: "/dashboard",
     name: "dashboard",
     meta: { auth: true, namespace: "dashboard" },
-    component: () => import("../views/dashboard/Dashboard"),
-    props: {
-      namespace: "dashboard"
-    }
+    component: () => import("../views/dashboard/Dashboard")
   },
   {
     path: "/importacoes/erros",
@@ -79,11 +84,11 @@ export default [
       component: () => import("../views/translator/ProductSizeSearch")
     }
   ]),
-  {
-    path: "/classificacoes/materiais",
-    name: "classificacoesMateriais",
-    component: () => import("../views/from/Material")
-  },
+  // {
+  //   path: "/classificacoes/materiais",
+  //   name: "classificacoesMateriais",
+  //   component: () => import("../views/from/Material")
+  // },
   {
     path: "/classificacoes/produtos",
     name: "classificacoesProdutos",

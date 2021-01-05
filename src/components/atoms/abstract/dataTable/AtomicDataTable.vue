@@ -10,18 +10,11 @@
 </template>
 
 <script>
+import { AtomicTablePropsMixin } from "@/mixins/AtomicTablePropsMixin";
+
 export default {
   name: "AtomicDataTable",
-  props: {
-    headers: {
-      type: Array,
-      required: true
-    },
-    items: {
-      type: Array,
-      required: true
-    }
-  }
+  mixins: [AtomicTablePropsMixin]
 };
 </script>
 

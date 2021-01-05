@@ -8,51 +8,29 @@
 
 <script>
 import AtomicDataTable from "@/components/atoms/abstract/dataTable/AtomicDataTable";
+import { NamespacePropsMixin } from "@/mixins/NamespacePropsMixin";
+import { DivisionPropsMixin } from "@/mixins/DivisionPropsMixin";
+import { TagPropsMixin } from "@/mixins/TagPropsMixin";
+import valuesFromStoreMixin from "@/mixins/valuesFromStoreMixin";
 export default {
   name: "AtomicDataTableDefault",
   components: { AtomicDataTable },
-  props: {
-    pathToValues: {
-      type: String,
-      required: true
-    },
-    vBind: {
-      type: Object,
-      required: false
-    },
-    clearDataOnMounted: {
-      type: Boolean,
-      required: true
-    },
-    fullPath: {
-      type: String,
-      required: false,
-      default: () => {
-        return undefined;
-      }
-    }
-  },
+  mixins: [
+    NamespacePropsMixin,
+    DivisionPropsMixin,
+    TagPropsMixin,
+    valuesFromStoreMixin
+  ],
   computed: {
     headers() {
-      const fullPathToHeaders = `${this.pathToValues}.columnNames`;
-      return fullPathToHeaders.split(".").reduce((o, k) => {
-        return o && o[k];
-      }, this.$store.state);
+      return this.getValueFromStoreWithStringPath(
+        `${this.namespace}.${this.division}.columnNames`
+      );
     },
     items() {
-      if (this.fullPath === undefined) {
-        const fullPathToItems = `${this.pathToValues}.data`;
-        const items = fullPathToItems.split(".").reduce((o, k) => {
-          return o && o[k];
-        }, this.$store.state);
-
-        if (!this.isNumber(Object.getOwnPropertyNames(items)[0])) return [];
-        return items === undefined || items.length === 0 || false ? [] : items;
-      }
-      const items = this.fullPath.split(".").reduce((o, k) => {
-        return o && o[k];
-      }, this.$store.state);
-      return items === undefined ? [] : items;
+      return this.getValueFromStoreWithStringPath(
+        `${this.namespace}.${this.division}.data`
+      );
     }
   },
   methods: {

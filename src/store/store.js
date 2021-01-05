@@ -10,8 +10,7 @@ import depara from "@/store/depara/depara";
 import productInformation from "@/store/translator/productInformation/productInformation";
 import product from "@/store/translator/product/product";
 import productSize from "@/store/translator/productSize/productSize";
-import fromProduct from "@/store/from/product/product";
-import fromMaterial from "@/store/from/material/material";
+import supplier from "@/store/from/supplier/supplier";
 import importProduct from "@/store/import/product/product";
 import importMaterial from "@/store/import/material/material";
 import notifications from "@/store/notifications/notifications";
@@ -40,8 +39,7 @@ const store = new Vuex.Store({
     from: {
       namespaced: true,
       modules: {
-        fromProduct,
-        fromMaterial
+        supplier
       }
     },
     import: {

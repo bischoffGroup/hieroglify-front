@@ -16,7 +16,7 @@ module.exports = {
       "code": 150,
       "template": 80,
       "tabWidth": 2,
-      "comments": 80,
+      "comments": 150,
       "ignorePattern": "",
       "ignoreComments": false,
       "ignoreTrailingComments": false,
