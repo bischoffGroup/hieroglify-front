@@ -1,5 +1,5 @@
 <template>
-  <v-footer :inset="footer_inset" app>
+  <v-footer :inset="footerInset" app>
     <span class="px-4">Bischoff Group &copy; {{ current }}</span>
   </v-footer>
 </template>
@@ -8,7 +8,7 @@
 export default {
   props: {
     current: Number,
-    footer_inset: Boolean,
+    footerInset: Boolean,
   },
 };
 </script>

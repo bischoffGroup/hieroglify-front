@@ -6,7 +6,7 @@ const validationRequirementsMixin = {
     valid() {
       const fields = this.validationRequirements;
       if (fields === undefined) {
-        throw new Error("¿MIXIN? field validationRequirements not found");
+        throw new Error('¿MIXIN? field validationRequirements not found');
       } else {
         let validation = false;
         fields.forEach(field => {

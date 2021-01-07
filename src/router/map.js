@@ -1,87 +1,93 @@
+function withPrefix(prefix, routes) {
+  return routes.map(route => {
+    route.path = `${prefix}/${route.path}`;
+    return route;
+  });
+}
 export default [
   {
-    path: "/",
-    redirect: { name: "dashboard" }
+    path: '/',
+    redirect: { name: 'dashboard' }
   },
-  ...withPrefix("/labs", [
+  ...withPrefix('/labs', [
     {
-      path: "textareaformatter",
-      name: "labs.textareaformatter",
+      path: 'textareaformatter',
+      name: 'labs.textareaformatter',
       meta: { auth: false },
-      component: () => import("../views/labs/textAreaFormatter/TextArea")
+      component: () => import('../views/labs/textAreaFormatter/TextArea')
     }
   ]),
-  ...withPrefix("/depara", [
+  ...withPrefix('/depara', [
     {
-      path: "fornecedores",
-      name: "from.suppliers",
+      path: 'fornecedores',
+      name: 'from.suppliers',
       meta: { auth: true },
-      component: () => import("../views/from/Supplier")
+      component: () => import('../views/from/Supplier')
     }
   ]),
-  ...withPrefix("/importacoes", [
-    ...withPrefix("artigos/produtos", [
+  ...withPrefix('/importacoes', [
+    ...withPrefix('artigos/produtos', [
       {
-        path: "importados",
-        name: "import.product.imported",
+        path: 'importados',
+        name: 'import.product.imported',
         meta: { auth: true },
-        component: () => import("../views/import/ImportedProduct")
+        component: () => import('../views/import/ImportedProduct')
       },
       {
-        path: "nimportados",
-        name: "import.product.nimported",
+        path: 'nimportados',
+        name: 'import.product.nimported',
         meta: { auth: true },
-        component: () => import("../views/import/NotImportedProduct")
+        component: () => import('../views/import/NotImportedProduct')
       }
     ]),
-    ...withPrefix("artigos/materiais", [
+    ...withPrefix('artigos/materiais', [
       {
-        path: "importados",
-        name: "import.material.imported",
+        path: 'importados',
+        name: 'import.material.imported',
         meta: { auth: true },
-        component: () => import("../views/import/ImportedMaterial")
+        component: () => import('../views/import/ImportedMaterial')
       },
       {
-        path: "nimportados",
-        name: "import.material.nimported",
+        path: 'nimportados',
+        name: 'import.material.nimported',
         meta: { auth: true },
-        component: () => import("../views/import/NotImportedMaterial")
+        component: () => import('../views/import/NotImportedMaterial')
       }
     ])
   ]),
   {
-    path: "/dashboard",
-    name: "dashboard",
-    meta: { auth: true, namespace: "dashboard" },
-    component: () => import("../views/dashboard/Dashboard")
+    path: '/dashboard',
+    name: 'dashboard',
+    meta: { auth: true, namespace: 'dashboard' },
+    component: () => import('../views/dashboard/Dashboard')
   },
   {
-    path: "/importacoes/erros",
-    name: "importacoes.erros",
+    path: '/importacoes/erros',
+    name: 'importacoes.erros',
     meta: { auth: true },
-    component: () => import("../views/logs/LogImportacaoErro")
+    component: () => import('../views/logs/LogImportacaoErro')
   },
   {
-    path: "/importacoes/historico",
-    name: "importacoes.historico",
+    path: '/importacoes/historico',
+    name: 'importacoes.historico',
     meta: { auth: true },
-    component: () => import("../views/logs/LogHistorico")
+    component: () => import('../views/logs/LogHistorico')
   },
-  ...withPrefix("/cargadedados", [
+  ...withPrefix('/cargadedados', [
     {
-      path: "fichatecnica",
-      name: "dataload.productInformation",
-      component: () => import("../views/translator/ProductInformationSearch")
+      path: 'fichatecnica',
+      name: 'dataload.productInformation',
+      component: () => import('../views/translator/ProductInformationSearch')
     },
     {
-      path: "combinacoes",
-      name: "dataload.product",
-      component: () => import("../views/translator/ProductSearch")
+      path: 'combinacoes',
+      name: 'dataload.product',
+      component: () => import('../views/translator/ProductSearch')
     },
     {
-      path: "grades",
-      name: "dataload.productSize",
-      component: () => import("../views/translator/ProductSizeSearch")
+      path: 'grades',
+      name: 'dataload.productSize',
+      component: () => import('../views/translator/ProductSizeSearch')
     }
   ]),
   // {
@@ -90,14 +96,8 @@ export default [
   //   component: () => import("../views/from/Material")
   // },
   {
-    path: "/classificacoes/produtos",
-    name: "classificacoesProdutos",
-    component: () => import("../views/from/Product")
+    path: '/classificacoes/produtos',
+    name: 'classificacoesProdutos',
+    component: () => import('../views/from/Product')
   }
 ];
-function withPrefix(prefix, routes) {
-  return routes.map(route => {
-    route.path = prefix + "/" + route.path;
-    return route;
-  });
-}
