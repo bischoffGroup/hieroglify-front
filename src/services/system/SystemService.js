@@ -1,10 +1,7 @@
-import { webservice } from "@/services";
-import { hateoas } from "@/services/tools";
+import { hateoas } from '@/services/tools';
+import webservice from '../webservice';
+
 export async function getTasks() {
-  return webservice.get(`v2/system/tasks`).then(response => {
-    return hateoas("tasks", response);
-  });
+  return webservice.get('v2/system/tasks').then(response => hateoas('tasks', response));
 }
-export const changeTaskStatus = async (taskUUID, status) => {
-  return webservice.post(`v2/system/tasks/status/${taskUUID}/${status}`);
-};
+export const changeTaskStatus = async(taskUUID, status) => webservice.post(`v2/system/tasks/status/${taskUUID}/${status}`);
