@@ -46,7 +46,7 @@ export default {
     /* getValueFromStoreWithPath() {
             return this.pathToValues.split('.').reduce((o, k) => {
                 return o && o[k]
-            }, this.$store.state)
+            }, this.$index.state)
         }, */
   },
 };

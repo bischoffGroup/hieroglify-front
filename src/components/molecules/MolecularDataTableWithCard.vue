@@ -15,7 +15,7 @@
                   :namespace="namespace"
                   :label="searchLabel"
                   :division="division"
-                  :field-path="`search${division}`"
+                  :field-path="fieldPath"
                 />
               </div>
             </v-row>
@@ -49,6 +49,7 @@ import { DivisionPropsMixin } from '@/mixins/DivisionPropsMixin';
 import { TagPropsMixin } from '@/mixins/TagPropsMixin';
 import AtomicCardText from '@/components/atoms/abstract/card/AtomicCardText';
 import MolecularSearch from '@/components/molecules/abstract/MolecularSearch';
+import { capitalizeFirstLetter } from '@hieroglify/lib-commons/src/utils/StringsUtils';
 
 export default {
   name: 'MolecularDataTableWithCard',
@@ -71,6 +72,11 @@ export default {
       default: () => 'DEFAULT SEARCH',
     },
   },
+  computed: {
+    fieldPath() {
+      return `search${capitalizeFirstLetter(this.division)}`;
+    }
+  }
 };
 </script>
 

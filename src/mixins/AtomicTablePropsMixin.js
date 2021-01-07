@@ -7,6 +7,10 @@ export const AtomicTablePropsMixin = {
     headers: {
       type: Array,
       required: true
+    },
+    search: {
+      type: String,
+      required: true
     }
   }
 };

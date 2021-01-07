@@ -10,7 +10,7 @@ import AtomicTextField from '@/components/atoms/abstract/textField/AtomicTextFie
 import { NamespacePropsMixin } from '@/mixins/NamespacePropsMixin';
 import { DivisionPropsMixin } from '@/mixins/DivisionPropsMixin';
 import { FieldPathPropsMixin } from '@/mixins/FieldPathPropsMixin';
-// import { mapActions } from 'vuex';
+import { ABSTRACT_TEXT_FIELD_INPUT } from '@hieroglify/lib-hieroglify-abstracts/src/store/DispatchesEnum';
 
 export default {
   name: 'MolecularSearch',
@@ -32,11 +32,9 @@ export default {
   },
   methods: {
     atomicTextFieldInput(event) {
-      this.$store.dispatch('abstractContext/inputs/INPUT_TEXTFIELD_ABSTRACT', { path: [this.namespace, this.division, this.fieldPath], value: event });
+      this.$store.dispatch(`${this.namespace}/${this.division}/${ABSTRACT_TEXT_FIELD_INPUT}`,
+        { path: [this.fieldPath], value: event });
     },
-    // ...mapActions('abstractContext/inputs', [
-    //   'INPUT_TEXTFIELD_ABSTRACT',
-    // ]),
   },
 };
 </script>

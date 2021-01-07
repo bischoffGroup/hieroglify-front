@@ -12,7 +12,7 @@
                   height="200"
                 />
                 <h2>HierogliFY</h2>
-                <h3>{{ version }}</h3>
+<!--                <h3>{{ version }}</h3>-->
                 <v-form ref="form" v-model="valid" lazy-validation>
                   <v-text-field
                     label="E-mail"
@@ -80,7 +80,7 @@ export default {
     },
     login() {
       this.$store
-        .dispatch('login', { email: this.email, password: this.password })
+        .dispatch('auth/login', { email: this.email, password: this.password })
         .then(() => {
           window.location.reload();
           // this.$router.push('dashboard').catch(error => {});

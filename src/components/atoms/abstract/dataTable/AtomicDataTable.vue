@@ -1,5 +1,5 @@
 <template>
-  <v-data-table v-bind="$attrs.vBind" :headers="headers" :items="items">
+  <v-data-table v-bind="$attrs.vBind" :headers="headers" :items="items" :search="search">
     <template v-slot:header>
       <slot name="header" />
     </template>

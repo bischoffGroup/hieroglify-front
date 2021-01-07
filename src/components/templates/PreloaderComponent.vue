@@ -11,7 +11,7 @@ export default {
   }),
   computed: {
     overlay() {
-      return this.$store.state.preloader.loading;
+      return this.$store.state.preloader.preloader.loading;
     },
   },
 };

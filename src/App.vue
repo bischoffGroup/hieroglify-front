@@ -29,7 +29,8 @@
                   v-else
                 />
               </div>
-              <v-list-item-title v-if="!primaryDrawer.mini"
+              <v-list-item-title
+v-if="!primaryDrawer.mini"
                 >HierogliFY</v-list-item-title
               >
               <v-list-item-subtitle v-if="!primaryDrawer.mini">{{
@@ -152,13 +153,13 @@
       </v-content>
       <footer-component :current="current" :footer_inset="footer.inset" />
       <Alert ref="alert" />
-      <molecular-notify-snack-bar />
+<!--      <molecular-notify-snack-bar />-->
     </v-app>
     <login v-else />
   </div>
 </template>
 <script>
-import MolecularNotifySnackBar from '@/components/molecules/MolecularNotifySnackBar';
+// import MolecularNotifySnackBar from '@/components/molecules/MolecularNotifySnackBar';
 import Bread from './components/templates/Bread';
 import MenuComponent from './components/templates/MenuComponent';
 import FooterComponent from './components/templates/FooterComponent';
@@ -168,7 +169,7 @@ import Alert from './components/snacks/Alert';
 
 export default {
   components: {
-    MolecularNotifySnackBar,
+    // MolecularNotifySnackBar,
     Alert,
     'footer-component': FooterComponent,
     'preloader-component': PreloaderComponent,
@@ -178,14 +179,15 @@ export default {
   },
   computed: {
     me() {
-      return this.$store.state.auth.me.id;
+      return this.$store.state.auth.auth.me.id;
     },
     version() {
-      return this.$store.state.version.version;
+      // return this.$store.state.version.version;
+      return '2.4.03';
     },
   },
   mounted() {
-    this.$store.dispatch('loadVersion');
+    // this.$store.dispatch('loadVersion');
     /* this.$socket.$subscribe('notification', payload => {
                 if(payload.status === 200){
                     this.importacoes_success = this.importacoes_success + 1;
@@ -199,8 +201,8 @@ export default {
   },
   data: () => ({
     show: false,
-    importacoes_success: 0,
-    importacoes_errors: 0,
+    importacoesSuccess: 0,
+    importacoesErrors: 0,
     dialog: false,
     current: new Date().getFullYear(),
     drawers: ['Default (no property)', 'Permanent', 'Temporary'],

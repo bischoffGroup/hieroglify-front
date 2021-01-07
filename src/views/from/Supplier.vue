@@ -11,7 +11,7 @@
 </template>
 <script>
 import MolecularDataTableWithCard from '@/components/molecules/MolecularDataTableWithCard';
-import { FROM_SUPPLIERS_GENERATE_SUPPLIERS } from '@/store/types/actionTypes';
+import { FROM_SUPPLIERS_GENERATE_SUPPLIERS } from '@/store/modules/enums/actionTypes';
 
 export default {
   name: 'Supplier',
@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       namespace: 'from',
-      division: 'supplier',
+      division: 'suppliers',
       tag: 'data',
       actionName: FROM_SUPPLIERS_GENERATE_SUPPLIERS,
       search: 'Buscar Fornecedores',

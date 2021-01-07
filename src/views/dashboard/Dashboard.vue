@@ -5,14 +5,14 @@
 </template>
 <script>
 import MolecularTasks from '@/components/molecules/concrete/MolecularTasks';
-import { SYSTEM_TASK_GENERATE_TASKS } from '@/store/types/actionTypes';
+import { SYSTEM_TASK_GENERATE_TASKS } from '@/store/modules/enums/actionTypes';
 
 export default {
   components: { MolecularTasks },
   data() {
     return {
       namespace: 'system',
-      division: 'systemTasks',
+      division: 'tasks',
       tag: 'data',
       actionName: SYSTEM_TASK_GENERATE_TASKS,
     };
@@ -23,7 +23,7 @@ export default {
   methods: {
     generateTasks() {
       this.$store.dispatch(
-        `${this.namespace}/${this.division}/${this.actionName}`,
+        `${this.namespace}/${this.division}/${this.actionName}`
       );
     },
   },

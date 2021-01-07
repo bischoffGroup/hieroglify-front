@@ -1,17 +1,13 @@
 const valuesFromStoreMixin = {
   methods: {
     getValueFromStoreWithPath() {
-      return this.pathToValues.split(".").reduce((o, k) => {
-        return o && o[k];
-      }, this.$store.state);
+      return this.pathToValues.split('.').reduce((o, k) => o && o[k], this.$store.state);
     },
     getValueFromStoreWithStringPath(string) {
-      return string.split(".").reduce((o, k) => {
-        return o && o[k];
-      }, this.$store.state);
+      return string.split('.').reduce((o, k) => o && o[k], this.$store.state);
     },
     replaceValue(object, path, value) {
-      const stack = path.split(".");
+      const stack = path.split('.');
       while (stack.length > 1) {
         object = object[stack.shift()];
       }

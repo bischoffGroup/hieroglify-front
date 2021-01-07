@@ -3,6 +3,7 @@
     v-bind="{ ...$props, ...$attrs }"
     :headers="headers"
     :items="items"
+    :search="search"
   >
     <template #header>
       <slot name="header" />
@@ -19,6 +20,8 @@ import { NamespacePropsMixin } from '@/mixins/NamespacePropsMixin';
 import { DivisionPropsMixin } from '@/mixins/DivisionPropsMixin';
 import { TagPropsMixin } from '@/mixins/TagPropsMixin';
 import valuesFromStoreMixin from '@/mixins/valuesFromStoreMixin';
+import { capitalizeFirstLetter } from '@hieroglify/lib-commons/src/utils/StringsUtils';
+// import { capitalizeFirstLetter } from '@hieroglify/lib-commons/src/utils/StringsUtils';
 
 export default {
   name: 'AtomicDataTableDefault',
@@ -46,6 +49,9 @@ export default {
         `${this.namespace}.${this.division}.data`,
       );
     },
+    search() {
+      return this.getValueFromStoreWithStringPath(`${this.namespace}.${this.division}.search${capitalizeFirstLetter(this.division)}`);
+    }
   },
   methods: {
     isNumber(value) {
