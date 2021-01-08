@@ -4,7 +4,7 @@
       <v-col cols="12">
         <v-text-field
           label="Regime de impostos"
-          v-model="regime_impostos"
+          v-model="regimeImpostos"
           @change="returnRegimeImpostos"
         />
       </v-col>
@@ -18,11 +18,11 @@ export default {
     validate: Boolean
   },
   data: () => ({
-    regime_impostos: ""
+    regimeImpostos: ''
   }),
   methods: {
     returnRegimeImpostos() {
-      this.$emit("returnRegimeImpostos", this.regime_impostos);
+      this.$emit('returnRegimeImpostos', this.regimeImpostos);
     }
   }
 };
