@@ -76,6 +76,23 @@
       <template slot="activator">
         <v-list-item dense>
           <v-list-item-icon>
+            <v-icon dense>fas fa-chart-line</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>Relatórios</v-list-item-title>
+        </v-list-item>
+      </template>
+      <v-list-item @click="push('report.changeStatusProducts')" dense>
+        <v-list-item-content>
+          <v-list-item>
+            <v-list-item-title>Produtos Cancelados</v-list-item-title>
+          </v-list-item>
+        </v-list-item-content>
+      </v-list-item>
+    </v-list-group>
+    <v-list-group no-action>
+      <template slot="activator">
+        <v-list-item dense>
+          <v-list-item-icon>
             <v-icon dense>fas fa-random</v-icon>
           </v-list-item-icon>
           <v-list-item-title>De/Para</v-list-item-title>

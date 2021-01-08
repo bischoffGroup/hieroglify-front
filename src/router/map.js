@@ -17,6 +17,14 @@ export default [
       component: () => import('../views/labs/textAreaFormatter/TextArea')
     }
   ]),
+  ...withPrefix('relatorios', [
+    {
+      path: 'produtosCancelados',
+      name: 'report.changeStatusProducts',
+      meta: { auth: true },
+      component: () => import('../views/report/ChangeStatusProduct')
+    }
+  ]),
   ...withPrefix('/depara', [
     {
       path: 'fornecedores',
