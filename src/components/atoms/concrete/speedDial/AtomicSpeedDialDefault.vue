@@ -23,18 +23,15 @@
 </template>
 
 <script>
-import AtomicSpeedDial from "@/components/atoms/abstract/speedDial/AtomicSpeedDial";
-import AtomicButton from "@/components/atoms/abstract/btn/AtomicButton";
-import AtomicBtnDefault from "@/components/atoms/concrete/btn/AtomicBtnDefault";
-import AtomicIcon from "@/components/atoms/abstract/icon/AtomicIcon";
-import AtomicBtnAction from "@/components/atoms/concrete/btn/AtomicBtnAction";
+import AtomicSpeedDial from '@/components/atoms/abstract/speedDial/AtomicSpeedDial';
+import AtomicBtnDefault from '@/components/atoms/concrete/btn/AtomicBtnDefault';
+import AtomicIcon from '@/components/atoms/abstract/icon/AtomicIcon';
+
 export default {
-  name: "AtomicSpeedDialDefault",
+  name: 'AtomicSpeedDialDefault',
   components: {
-    AtomicBtnAction,
     AtomicIcon,
     AtomicBtnDefault,
-    AtomicButton,
     AtomicSpeedDial
   },
   props: {

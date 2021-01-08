@@ -18,7 +18,6 @@ export default {
       },
       mutations: {
         [FROM_GRIDS](state, grids) {
-          console.log(state, grids);
           state.data = grids;
         },
         [FROM_GRIDS_COLUMNS](state) {

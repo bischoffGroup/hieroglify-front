@@ -3,15 +3,12 @@ export default {
     state.data = products;
   },
   IMPORT_PRODUCTS_COLUMNS(state) {
-    state.columnNames =
-      state.data.length === 0
-        ? []
-        : Object.getOwnPropertyNames({ ...state.data[0] }).map(e => {
-            return {
-              text: e,
-              value: e
-            };
-          });
+    state.columnNames = state.data.length === 0
+      ? []
+      : Object.getOwnPropertyNames({ ...state.data[0] }).map(e => ({
+        text: e,
+        value: e
+      }));
   },
   CLEAR_STATE(state) {
     state.columnNames = [];
@@ -24,11 +21,9 @@ export default {
       if (state.data[e].length > 0) {
         state.columnNames = Object.getOwnPropertyNames({
           ...state.data[e][0]
-        }).map(e => {
-          return {
-            text: e,
-            value: e
-          };
+        }).forEach(e => {
+          text: e,
+          value: e
         });
       }
     });
@@ -37,14 +32,11 @@ export default {
     state.data = products;
   },
   NOT_IMPORTED_PRODUCTS_CATEGORIES(state) {
-    state.categories =
-      state.data.length === 0
-        ? []
-        : Object.getOwnPropertyNames({ ...state.data }).map(e => {
-            return {
-              text: e,
-              value: e
-            };
-          });
+    state.categories = state.data.length === 0
+      ? []
+      : Object.getOwnPropertyNames({ ...state.data }).map(e => ({
+        text: e,
+        value: e
+      }));
   }
 };

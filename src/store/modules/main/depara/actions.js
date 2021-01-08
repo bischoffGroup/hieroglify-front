@@ -124,6 +124,8 @@ export default {
       case 'CLASSIF_PRODUTO':
         context.commit('CLASSIF_PRODUTOS_DELETE');
         break;
+      default:
+        break;
     }
   },
   buscarClassificacoes(context, tipo) {

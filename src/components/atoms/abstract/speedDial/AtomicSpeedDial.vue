@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: "AtomicSpeedDial"
+  name: 'AtomicSpeedDial'
 };
 </script>
 
