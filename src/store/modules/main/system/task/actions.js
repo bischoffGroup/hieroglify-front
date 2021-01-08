@@ -10,10 +10,7 @@ import {
 } from '@/store/modules/enums/mutationTypes';
 
 export default {
-  async [DEFAULT_CHECKBOX](
-    { commit, dispatch },
-    payload = { value: undefined, dto: undefined }
-  ) {
+  async [DEFAULT_CHECKBOX]({ dispatch }, payload = { value: undefined, dto: undefined }) {
     await changeTaskStatus(payload.dto._ID, payload.value);
     await dispatch(SYSTEM_TASK_GENERATE_TASKS, { root: true });
   },
