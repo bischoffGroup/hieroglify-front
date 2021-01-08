@@ -23,6 +23,60 @@ export default [
       name: 'from.suppliers',
       meta: { auth: true },
       component: () => import('../views/from/Supplier')
+    },
+    {
+      path: 'categorias',
+      name: 'from.categories',
+      meta: { auth: true },
+      component: () => import('../views/from/Category')
+    },
+    {
+      path: 'colecoes',
+      name: 'from.collections',
+      meta: { auth: true },
+      component: () => import('../views/from/Collection')
+    },
+    {
+      path: 'cores',
+      name: 'from.colors',
+      meta: { auth: true },
+      component: () => import('../views/from/Color')
+    },
+    {
+      path: 'grades',
+      name: 'from.grids',
+      meta: { auth: true },
+      component: () => import('../views/from/Grid')
+    },
+    {
+      path: 'lancamentos',
+      name: 'from.launchies',
+      meta: { auth: true },
+      component: () => import('../views/from/Launch')
+    },
+    {
+      path: 'classifMateriais',
+      name: 'from.materialClassifications',
+      meta: { auth: true },
+      component: () => import('../views/from/MaterialClassification')
+    },
+    {
+      path: 'precos',
+      name: 'from.pricings',
+      meta: { auth: true },
+      component: () => import('../views/from/Pricing')
+    },
+    {
+      path: 'classifProdutos',
+      name: 'from.productClassifications',
+      meta: { auth: true },
+      component: () => import('../views/from/ProductClassification')
+    },
+    {
+      path: 'tamanhos',
+      name: 'from.sizes',
+      meta: { auth: true },
+      component: () => import('../views/from/Size')
     }
   ]),
   ...withPrefix('/importacoes', [
@@ -90,14 +144,5 @@ export default [
       component: () => import('../views/translator/ProductSizeSearch')
     }
   ]),
-  // {
-  //   path: "/classificacoes/materiais",
-  //   name: "classificacoesMateriais",
-  //   component: () => import("../views/from/Material")
-  // },
-  {
-    path: '/classificacoes/produtos',
-    name: 'classificacoesProdutos',
-    component: () => import('../views/from/Product')
-  }
+
 ];

@@ -88,20 +88,69 @@
           </v-list-item>
         </v-list-item-content>
       </v-list-item>
-      <!--      <v-list-item @click="push('classificacoesMateriais')" dense>-->
-      <!--        <v-list-item-content>-->
-      <!--          <v-list-item>-->
-      <!--            <v-list-item-title>Classificações de Materiais</v-list-item-title>-->
-      <!--          </v-list-item>-->
-      <!--        </v-list-item-content>-->
-      <!--      </v-list-item>-->
-      <!--      <v-list-item @click="push('classificacoesProdutos')" dense>-->
-      <!--        <v-list-item-content>-->
-      <!--          <v-list-item>-->
-      <!--            <v-list-item-title>Classificações de Produtos</v-list-item-title>-->
-      <!--          </v-list-item>-->
-      <!--        </v-list-item-content>-->
-      <!--      </v-list-item>-->
+      <v-list-item @click="push('from.categories')" dense>
+        <v-list-item-content>
+          <v-list-item>
+            <v-list-item-title>Categorias</v-list-item-title>
+          </v-list-item>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item @click="push('from.collections')" dense>
+        <v-list-item-content>
+          <v-list-item>
+            <v-list-item-title>Coleções</v-list-item-title>
+          </v-list-item>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item @click="push('from.colors')" dense>
+        <v-list-item-content>
+          <v-list-item>
+            <v-list-item-title>Cores</v-list-item-title>
+          </v-list-item>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item @click="push('from.grids')" dense>
+        <v-list-item-content>
+          <v-list-item>
+            <v-list-item-title>Grades</v-list-item-title>
+          </v-list-item>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item @click="push('from.launchies')" dense>
+        <v-list-item-content>
+          <v-list-item>
+            <v-list-item-title>Lançamentos</v-list-item-title>
+          </v-list-item>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item @click="push('from.materialClassifications')" dense>
+        <v-list-item-content>
+          <v-list-item>
+            <v-list-item-title>Classif. Materiais</v-list-item-title>
+          </v-list-item>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item @click="push('from.pricings')" dense>
+        <v-list-item-content>
+          <v-list-item>
+            <v-list-item-title>Preços</v-list-item-title>
+          </v-list-item>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item @click="push('from.productClassifications')" dense>
+        <v-list-item-content>
+          <v-list-item>
+            <v-list-item-title>Classif. Produtos</v-list-item-title>
+          </v-list-item>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item @click="push('from.sizes')" dense>
+        <v-list-item-content>
+          <v-list-item>
+            <v-list-item-title>Tamanhos</v-list-item-title>
+          </v-list-item>
+        </v-list-item-content>
+      </v-list-item>
     </v-list-group>
     <!--    <v-list-group no-action>-->
     <!--      <template slot="activator">-->
