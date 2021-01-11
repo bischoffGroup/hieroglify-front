@@ -17,7 +17,7 @@ export default [
       component: () => import('../views/labs/textAreaFormatter/TextArea')
     }
   ]),
-  ...withPrefix('relatorios', [
+  ...withPrefix('/relatorios', [
     {
       path: 'produtosCancelados',
       name: 'report.changeStatusProducts',

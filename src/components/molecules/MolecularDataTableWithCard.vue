@@ -33,7 +33,18 @@
               :division="division"
               :tag="tag"
               class="elevation-1"
-            />
+            >
+              <template
+                v-for="slot in slotsGetAllSlots"
+                :slot="slot"
+                slot-scope="props"
+              >
+                <slot
+                  :name="slot"
+                  v-bind="props"
+                />
+              </template>
+            </atomic-data-table-default>
           </template>
         </atomic-card-text>
       </slot>
@@ -50,10 +61,11 @@ import { TagPropsMixin } from '@/mixins/TagPropsMixin';
 import AtomicCardText from '@/components/atoms/abstract/card/AtomicCardText';
 import MolecularSearch from '@/components/molecules/abstract/MolecularSearch';
 import { capitalizeFirstLetter } from '@hieroglify/lib-commons/src/utils/StringsUtils';
+import GetAllSlotsMixin from '@/mixins/GetAllSlotsMixin';
 
 export default {
   name: 'MolecularDataTableWithCard',
-  mixins: [NamespacePropsMixin, DivisionPropsMixin, TagPropsMixin],
+  mixins: [NamespacePropsMixin, DivisionPropsMixin, TagPropsMixin, GetAllSlotsMixin],
   components: {
     MolecularSearch,
     AtomicCardText,

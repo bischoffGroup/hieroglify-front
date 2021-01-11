@@ -11,6 +11,16 @@
     <template #footer>
       <slot name="footer" />
     </template>
+    <template
+      v-for="slot in slotsGetAllSlots"
+      :slot="slot"
+      slot-scope="props"
+    >
+      <slot
+        :name="slot"
+        v-bind="props"
+      />
+    </template>
   </atomic-data-table>
 </template>
 
@@ -21,7 +31,7 @@ import { DivisionPropsMixin } from '@/mixins/DivisionPropsMixin';
 import { TagPropsMixin } from '@/mixins/TagPropsMixin';
 import valuesFromStoreMixin from '@/mixins/valuesFromStoreMixin';
 import { capitalizeFirstLetter } from '@hieroglify/lib-commons/src/utils/StringsUtils';
-// import { capitalizeFirstLetter } from '@hieroglify/lib-commons/src/utils/StringsUtils';
+import GetAllSlotsMixin from '@/mixins/GetAllSlotsMixin';
 
 export default {
   name: 'AtomicDataTableDefault',
@@ -31,6 +41,7 @@ export default {
     DivisionPropsMixin,
     TagPropsMixin,
     valuesFromStoreMixin,
+    GetAllSlotsMixin
   ],
   props: {
     vBind: {
