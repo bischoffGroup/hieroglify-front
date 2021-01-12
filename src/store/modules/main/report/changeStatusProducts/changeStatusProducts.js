@@ -9,6 +9,7 @@ import { mergeArray } from '@hieroglify/lib-commons/src/utils/ObjUtils';
 import TextFieldStoreAbstract from '@hieroglify/lib-hieroglify-abstracts/src/store/textfields/TextfieldStoreAbstract';
 import DataStoreGeneric from '@hieroglify/lib-commons/src/store/data/DataStoreGeneric';
 import { getChageStatusProducts } from '@/services/report/ReportService';
+import BtnStoreAbstract from '@hieroglify/lib-hieroglify-abstracts/src/store/btns/BtnStoreAbstract';
 
 export default {
   use: () => {
@@ -44,6 +45,7 @@ export default {
     return mergeArray([
       store,
       TextFieldStoreAbstract.use({}),
+      BtnStoreAbstract.use({}),
       DataStoreGeneric.use({})
     ]);
   }

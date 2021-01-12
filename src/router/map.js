@@ -15,6 +15,12 @@ export default [
       name: 'labs.textareaformatter',
       meta: { auth: false },
       component: () => import('../views/labs/textAreaFormatter/TextArea')
+    },
+    {
+      path: 'speeddial',
+      name: 'labs.speeddial',
+      meta: { auth: false },
+      component: () => import('../views/labs/speeddial/Speeddial')
     }
   ]),
   ...withPrefix('/relatorios', [

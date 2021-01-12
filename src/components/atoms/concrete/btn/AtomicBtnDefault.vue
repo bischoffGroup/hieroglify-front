@@ -1,5 +1,5 @@
 <template>
-  <atomic-button v-bind="{ ...$props, ...$attrs }" @click="click">
+  <atomic-button v-bind="{ ...$props, ...$attrs }" @atomicBtnClick="click">
     <template v-slot:buttonContent>
       <slot name="buttonContent" />
     </template>
@@ -7,10 +7,12 @@
 </template>
 
 <script>
-import AtomicButton from "@/components/atoms/abstract/btn/AtomicButton";
+import AtomicButton from '@/components/atoms/abstract/btn/AtomicButton';
+
 export default {
-  name: "AtomicBtnDefault",
+  name: 'AtomicBtnDefault',
   components: { AtomicButton },
+  extends: AtomicButton,
   props: {
     vBind: {
       type: Object,
@@ -19,7 +21,7 @@ export default {
   },
   methods: {
     click() {
-      this.$emit("click", "click");
+      this.$emit('click', 'click');
     }
   }
 };

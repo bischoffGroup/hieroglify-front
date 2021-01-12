@@ -1,22 +1,9 @@
 <template>
-  <atomic-speed-dial v-bind="{ ...$props, ...$attrs }">
+  <atomic-speed-dial v-bind="{ ...$props, ...$attrs }"  >
     <template v-slot:activator>
-      <slot name="speedDialActivator">
-        <atomic-btn-default
-          :v-bind="{
-            circle: true,
-            fab: true,
-            color: 'blue darken-2',
-            dark: true
-          }"
-        >
-          <template v-slot:buttonContent>
-            <atomic-icon icon="fas fa-question" />
-          </template>
-        </atomic-btn-default>
-      </slot>
+      <slot name="activatorContent" />
     </template>
-    <template v-slot:speedContent>
+    <template v-slot:content>
       <slot name="speedDialContent" />
     </template>
   </atomic-speed-dial>
@@ -24,22 +11,21 @@
 
 <script>
 import AtomicSpeedDial from '@/components/atoms/abstract/speedDial/AtomicSpeedDial';
-import AtomicBtnDefault from '@/components/atoms/concrete/btn/AtomicBtnDefault';
-import AtomicIcon from '@/components/atoms/abstract/icon/AtomicIcon';
+import GetAllSlotsMixin from '@/mixins/GetAllSlotsMixin';
+import { AtomicSpeedDialPropsMixin } from '@/mixins/AtomicSpeedDialPropsMixin';
 
 export default {
   name: 'AtomicSpeedDialDefault',
   components: {
-    AtomicIcon,
-    AtomicBtnDefault,
     AtomicSpeedDial
   },
+  mixins: [GetAllSlotsMixin, AtomicSpeedDialPropsMixin],
   props: {
     vBind: {
       type: Object,
       required: false
     }
-  }
+  },
 };
 </script>
 
