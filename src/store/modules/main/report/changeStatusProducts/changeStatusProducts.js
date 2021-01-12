@@ -10,6 +10,7 @@ import TextFieldStoreAbstract from '@hieroglify/lib-hieroglify-abstracts/src/sto
 import DataStoreGeneric from '@hieroglify/lib-commons/src/store/data/DataStoreGeneric';
 import { getChageStatusProducts } from '@/services/report/ReportService';
 import BtnStoreAbstract from '@hieroglify/lib-hieroglify-abstracts/src/store/btns/BtnStoreAbstract';
+import DownloadStoreGeneric from '@hieroglify/lib-commons/src/store/download/DownloadStoreGeneric';
 
 export default {
   use: () => {
@@ -46,6 +47,7 @@ export default {
       store,
       TextFieldStoreAbstract.use({}),
       BtnStoreAbstract.use({}),
+      DownloadStoreGeneric.use({}),
       DataStoreGeneric.use({})
     ]);
   }
