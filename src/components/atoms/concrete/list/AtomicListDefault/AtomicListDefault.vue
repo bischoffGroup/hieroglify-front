@@ -32,6 +32,7 @@ import { DivisionPropsMixin } from '@/mixins/DivisionPropsMixin';
 import { TagPropsMixin } from '@/mixins/TagPropsMixin';
 import AtomicListItem from '@/components/atoms/abstract/list/AtomicListItem';
 import AtomicCardDefault from '@/components/atoms/concrete/card/AtomicCardDefault';
+import { getDeepValueByPath } from '@hieroglify/lib-commons/src/utils/ObjUtils';
 
 export default {
   name: 'AtomicListDefault',
@@ -49,7 +50,9 @@ export default {
   },
   computed: {
     list() {
-      return this.$store.state[this.namespace][this.division][this.tag];
+      const path = `${this.namespace}.${this.division}.${this.tag}`;
+      return getDeepValueByPath(this.$store.state, path);
+    //  return this.$store.state[this.namespace][this.division][this.tag];
     },
   },
   methods: {

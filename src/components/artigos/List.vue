@@ -41,28 +41,28 @@ export default {
   data: () => ({
     singleSelect: false,
     selected: [],
-    search: "",
+    search: '',
     headers: [
-      { text: "ITMREF", value: "ITMREF" },
-      { text: "C2", value: "ITMREF_DES" },
-      { text: "TCLCOD", value: "TCLCOD" },
-      { text: "ITMSTA", value: "ITMSTA" },
-      { text: "ITMSTA_LBL", value: "ITMSTA_LBL" },
-      { text: "EANCOD", value: "EANCOD" },
-      { text: "SEAKEY", value: "SEAKEY" },
-      { text: "CREDAT", value: "" },
-      { text: "UPDDAT", value: "UPDDAT" }
+      { text: 'ITMREF', value: 'ITMREF' },
+      { text: 'C2', value: 'ITMREF_DES' },
+      { text: 'TCLCOD', value: 'TCLCOD' },
+      { text: 'ITMSTA', value: 'ITMSTA' },
+      { text: 'ITMSTA_LBL', value: 'ITMSTA_LBL' },
+      { text: 'EANCOD', value: 'EANCOD' },
+      { text: 'SEAKEY', value: 'SEAKEY' },
+      { text: 'CREDAT', value: '' },
+      { text: 'UPDDAT', value: 'UPDDAT' }
     ]
   }),
   methods: {
     getColor(categoria) {
-      if (categoria === "PAC02") return "red";
-      if (categoria === "PCA02") return "blue";
-      if (categoria === "PCO02") return "green";
-      else return "gray";
+      if (categoria === 'PAC02') return 'red';
+      if (categoria === 'PCA02') return 'blue';
+      if (categoria === 'PCO02') return 'green';
+      return 'gray';
     },
     importArtigo() {
-      this.$store.dispatch("importArtigo");
+      this.$store.dispatch('importArtigo');
     }
   }
 };

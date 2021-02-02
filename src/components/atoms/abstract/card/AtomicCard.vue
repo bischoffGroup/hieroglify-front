@@ -1,5 +1,5 @@
 <template>
-  <v-card v-bind="$attrs.vBind">
+  <v-card v-bind="$attrs">
     <slot name="cardContent"></slot>
   </v-card>
 </template>

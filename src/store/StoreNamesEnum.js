@@ -2,6 +2,8 @@ export const STORE_MAIN_FROM_MODULE = 'from';
 export const STORE_MAIN_SYSTEM_MODULE = 'system';
 export const STORE_MAIN_REPORT_MODULE = 'report';
 
+export const STORE_MAIN_IMPORTABLE_MODULE = 'import';
+
 export const STORE_CORE_AUTH_MODULE = 'auth';
 export const STORE_CORE_NOTIFICATIONS_MODULE = 'notifications';
 export const STORE_CORE_PRELOADER_MODULE = 'preloader';

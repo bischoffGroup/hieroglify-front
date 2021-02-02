@@ -1,5 +1,5 @@
 <template>
-  <v-icon v-bind="$attrs.vBind">{{ icon }}</v-icon>
+  <v-icon v-bind="{...$attrs}">{{ icon }}</v-icon>
 </template>
 
 <script>
