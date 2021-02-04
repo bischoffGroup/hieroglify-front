@@ -8,7 +8,7 @@
         max-width="calc(100% - 32px)"
       >
         <v-col class="title text-center">
-          <atomic-icon icon="fas fa-exclamation-triangle"  v-bind="{xLarge: true, color: 'white'}"></atomic-icon>
+          <atomic-icon :icon="icon"  v-bind="{xLarge: true, color: 'white'}"></atomic-icon>
           <div class="white--text">{{ countable }}</div>
         </v-col>
       </v-sheet>
@@ -36,6 +36,10 @@ export default {
   name: 'DashboardTileAmount',
   components: { AtomicIcon, AtomicCardDefault },
   props: {
+    icon: {
+      type: String,
+      required: true
+    },
     tileColor: {
       type: String,
       required: true
