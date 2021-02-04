@@ -25,7 +25,7 @@
           </v-col>
         </v-row>
       </v-col>
-      <v-col sm="12" lg="4" md="4">
+      <v-col sm="12" lg="6" md="6">
         <molecular-tasks :namespace="namespace" :division="division" :tag="tag" />
       </v-col>
       <v-col sm="12" lg="3">

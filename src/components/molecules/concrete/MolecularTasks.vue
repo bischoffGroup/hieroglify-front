@@ -1,6 +1,5 @@
 <template>
   <atomic-card-default>
-    <template #cardContent>
       <atomic-card-text>
         <template #cardTextContent>
           <div class="col-12 title">Tasks de importações</div>
@@ -47,12 +46,10 @@
           </atomic-list-default>
         </template>
       </atomic-card-text>
-    </template>
   </atomic-card-default>
 </template>
 <script>
 import AtomicCardDefault from '@/components/atoms/concrete/card/AtomicCardDefault';
-// import AtomicCardTitle from '@/components/atoms/abstract/card/AtomicCardTitle';
 import AtomicCardText from '@/components/atoms/abstract/card/AtomicCardText';
 import AtomicListDefault from '@/components/atoms/concrete/list/AtomicListDefault/AtomicListDefault';
 import { NamespacePropsMixin } from '@/mixins/NamespacePropsMixin';
@@ -74,7 +71,6 @@ export default {
     AtomicListItem,
     AtomicListDefault,
     AtomicCardText,
-    // AtomicCardTitle,
     AtomicCardDefault,
   },
   mixins: [NamespacePropsMixin, DivisionPropsMixin, TagPropsMixin],

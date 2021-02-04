@@ -1,12 +1,15 @@
 <template>
   <v-card v-bind="$attrs">
-    <slot name="cardContent"></slot>
+    <slot />
   </v-card>
 </template>
 
 <script>
+import GetAllSlotsMixin from '@/mixins/GetAllSlotsMixin';
+
 export default {
   name: 'AtomicCard',
+  mixins: [GetAllSlotsMixin]
 };
 </script>
 
