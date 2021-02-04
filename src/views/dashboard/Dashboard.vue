@@ -90,7 +90,7 @@ export default {
   computed: {
     notImportableProductsAddInformation() {
       const date = new Date();
-      return `Última atualização em:  ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+      return `Última atualização em:  ${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
     },
     countNotImportableProducts() {
       const path = `${this.importNamespace}.${this.importableProductsDivision}.notImportable.data`;
@@ -127,7 +127,6 @@ export default {
         `${this.namespace}/${this.division}/${this.actionName}`
       );
     },
-
   },
 };
 </script>
