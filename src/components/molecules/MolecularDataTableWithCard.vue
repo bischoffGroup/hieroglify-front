@@ -1,6 +1,5 @@
 <template>
   <atomic-card-default>
-    <template v-slot:cardTitle>
       <slot name="titleDataTable">
         <atomic-card-text>
           <template #cardTextContent>
@@ -22,8 +21,6 @@
           </template>
         </atomic-card-text>
       </slot>
-    </template>
-    <template v-slot:cardContent>
       <slot name="contentDataTable">
         <atomic-card-text>
           <template #cardTextContent>
@@ -48,7 +45,6 @@
           </template>
         </atomic-card-text>
       </slot>
-    </template>
   </atomic-card-default>
 </template>
 
