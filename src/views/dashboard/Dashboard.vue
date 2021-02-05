@@ -5,9 +5,12 @@
         <dashboard-tile-dates-spirkline
           :namespace="importNamespace"
           :division="importableProductsDivision"
+          :add-information="notImportableProductsAddInformation"
           tag="datesAndAccountingForImportedProducts.data"
           labels-properties-names="DATA_CADASTRAMENTO"
           values-properties-names="QUANTIDADE"
+          title="Relação entre período e quantidade de produtos importados"
+          description="Gráfico que resulta as datas onde ocorreram importações e a quantidade de produtos na envolvidos."
         />
       </v-col>
     </v-row>
