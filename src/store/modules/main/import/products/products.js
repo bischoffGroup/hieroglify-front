@@ -1,11 +1,12 @@
 import {
   IMPORT_PRODUCTS_COLUMNS_IMPORTABLE,
-  IMPORT_PRODUCTS_COLUMNS_NOT_IMPORTABLE,
+  IMPORT_PRODUCTS_COLUMNS_NOT_IMPORTABLE, IMPORT_PRODUCTS_DATES_AND_ACCOUNTING_FOR_IMPORTED_PRODUCTS,
   IMPORT_PRODUCTS_IMPORTABLE,
   IMPORT_PRODUCTS_NOT_IMPORTABLE,
 } from '@/store/modules/enums/mutationTypes';
 import { getImportableProducts } from '@/services';
 import { IMPORT_PRODUCTS_GENERATE } from '@/store/modules/enums/actionTypes';
+import { getDatesAndAccountingForImportedProducts } from '@/services/import/ProductService';
 
 export default {
   use: () => ({
@@ -17,9 +18,15 @@ export default {
       notImportable: {
         data: [],
         columnNames: []
+      },
+      datesAndAccountingForImportedProducts: {
+        data: []
       }
     },
     mutations: {
+      [IMPORT_PRODUCTS_DATES_AND_ACCOUNTING_FOR_IMPORTED_PRODUCTS](state, importDates) {
+        state.datesAndAccountingForImportedProducts.data = importDates;
+      },
       [IMPORT_PRODUCTS_IMPORTABLE](state, importProducts) {
         state.importable.data = importProducts;
       },
@@ -53,6 +60,7 @@ export default {
           commit(IMPORT_PRODUCTS_NOT_IMPORTABLE, await getImportableProducts(payload.valid));
           commit(IMPORT_PRODUCTS_COLUMNS_NOT_IMPORTABLE);
         }
+        commit(IMPORT_PRODUCTS_DATES_AND_ACCOUNTING_FOR_IMPORTED_PRODUCTS, await getDatesAndAccountingForImportedProducts());
         commit('LOADING', false, { root: true });
       }
     },

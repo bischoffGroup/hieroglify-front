@@ -9,3 +9,6 @@ export async function getImportableProducts(valid) {
 export async function getImportableMaterials(valid) {
   return webservice.get(`${version}/${prefix}/importableMaterials/${valid}`).then(response => response.data);
 }
+export async function getDatesAndAccountingForImportedProducts() {
+  return webservice.get(`${version}/${prefix}/datesAndAccountingForImportedProducts`).then(response => response.data);
+}

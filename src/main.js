@@ -1,3 +1,4 @@
+import VueApexCharts from 'vue-apexcharts';
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router/router';
@@ -5,18 +6,13 @@ import { store } from './store';
 import vuetify from './plugins/vuetify';
 import '@fortawesome/fontawesome-free/css/all.css';
 import 'roboto-fontface/css/roboto/roboto-fontface.css';
-// import VueSocketIOExt from 'vue-socket.io-extended';
-// import io from 'socket.io-client';
-// import VueCodemirror from 'vue-codemirror';
 import 'codemirror/lib/codemirror.css';
 
 Vue.config.productionTip = false;
 Vue.use(vuetify);
-// Vue.use(VueCodemirror);
+Vue.use(VueApexCharts);
 
-// const socket = io('http://10.1.0.22:3001');
-
-// Vue.use(VueSocketIOExt, socket);
+Vue.component('apexchart', VueApexCharts);
 
 store().dispatch('auth/checkLogin').then(() => {
   new Vue({

@@ -1,6 +1,17 @@
 <template>
   <v-container>
     <v-row>
+      <v-col cols="12">
+        <dashboard-tile-dates-spirkline
+          :namespace="importNamespace"
+          :division="importableProductsDivision"
+          tag="datesAndAccountingForImportedProducts.data"
+          labels-properties-names="DATA_CADASTRAMENTO"
+          values-properties-names="QUANTIDADE"
+        />
+      </v-col>
+    </v-row>
+    <v-row>
       <v-col sm="12" lg="3">
         <v-row>
           <v-col cols="12">
@@ -66,9 +77,10 @@ import {
 import { STORE_MAIN_IMPORTABLE_MODULE } from '@/store/StoreNamesEnum';
 import DashboardTileAmount from '@/components/molecules/concrete/DashboardTileAmount';
 import { getDeepValueByPath } from '@hieroglify/lib-commons/src/utils/ObjUtils';
+import DashboardTileDatesSpirkline from '@/components/molecules/concrete/DashboardTileDatesSpirkline';
 
 export default {
-  components: { DashboardTileAmount, MolecularTasks },
+  components: { DashboardTileDatesSpirkline, DashboardTileAmount, MolecularTasks },
   data() {
     return {
       namespace: 'system',
@@ -111,7 +123,8 @@ export default {
       const path = `${this.importNamespace}.${this.importableMaterialsDivision}.importable.data`;
       const total = getDeepValueByPath(this.$store.state, path);
       return total.length;
-    }
+    },
+
   },
   methods: {
     generateImpotableMaterials() {
@@ -123,9 +136,7 @@ export default {
       this.$store.dispatch(`${this.importNamespace}/${this.importableProductsDivision}/${this.actionNameImportProductsGenerate}`, { valid: false });
     },
     generateTasks() {
-      this.$store.dispatch(
-        `${this.namespace}/${this.division}/${this.actionName}`
-      );
+      this.$store.dispatch(`${this.namespace}/${this.division}/${this.actionName}`);
     },
   },
 };
