@@ -1,11 +1,13 @@
 <template>
-  <apexchart width="100%" height="400"   type="line" :options="options" :series="values"   />
+  <apexchart :width="width" :height="height"   type="line" :options="options" :series="values"   />
 </template>
 
 <script>
 export default {
   name: 'SingleLineChartAbstract',
   props: {
+    width: { type: [String, Number], required: true },
+    height: { type: [String, Number], required: true },
     labelY: { type: String, required: false, default() { return ''; } },
     labelX: { type: String, required: false, default() { return ''; } },
     fontColorY: { type: String, required: true },

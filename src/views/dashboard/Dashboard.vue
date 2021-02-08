@@ -11,6 +11,9 @@
           values-properties-names="QUANTIDADE"
           title="Relação entre período e quantidade de produtos importados"
           description="Gráfico que resulta as datas onde ocorreram importações e a quantidade de produtos na envolvidos."
+          label-x="Datas de importações"
+          label-y="Produtos importados"
+          series-name="Produtos importados"
         />
       </v-col>
     </v-row>

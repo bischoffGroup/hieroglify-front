@@ -6,15 +6,26 @@
       elevation="12"
       max-width="calc(100% - 32px)"
     >
+      <v-row>
+        <v-col class="d-flex">
+          <dot-color-picker-abstract
+            type-return="hexa"
+            :rapid-refresh="false"
+            @dotColorPickerAbstractEvent="showColor"
+          />
+        </v-col>
+      </v-row>
       <single-line-chart-abstract
         :categories-x="labels"
         :series-values="values"
-        label-x="Datas de importações"
-        label-y="Produtos importados"
-        series-name="Produtos importados"
-        font-color-y="#FFF"
-        font-color-x="#FFF"
-        common-color="#FFF"
+        :label-x="labelX"
+        :label-y="labelY"
+        :series-name="seriesName"
+        width="100%"
+        height="400px"
+        :font-color-y="colorPicker"
+        :font-color-x="colorPicker"
+        :common-color="colorPicker"
       />
     </v-sheet>
     <v-card-text class="pt-0">
@@ -33,20 +44,26 @@ import { getDeepValueByPath } from '@hieroglify/lib-commons/src/utils/ObjUtils';
 import moment from 'moment';
 import SingleLineChartAbstract from '@/components/molecules/abstract/SingleLineChartAbstract';
 import AtomicCardDefault from '@/components/atoms/concrete/card/AtomicCardDefault';
+import DotColorPickerAbstract from '@/components/molecules/abstract/DotColorPickerAbstract';
 
 export default {
   name: 'DashboardTileDatesSpirkline',
-  components: { AtomicCardDefault, SingleLineChartAbstract },
+  components: { DotColorPickerAbstract, AtomicCardDefault, SingleLineChartAbstract },
   mixins: [NamespacePropsMixin, DivisionPropsMixin, TagPropsMixin],
   props: {
     title: { type: String, required: true },
     description: { type: String, required: true },
     addInformation: { type: String, required: false, default() { return ''; } },
     labelsPropertiesNames: { type: String, required: true },
-    valuesPropertiesNames: { type: String, required: true }
+    valuesPropertiesNames: { type: String, required: true },
+    labelX: { type: String, required: false },
+    labelY: { type: String, required: false },
+    seriesName: { type: String, required: false }
   },
   data() {
-    return {};
+    return {
+      colorPicker: ''
+    };
   },
   computed: {
     values() {
@@ -62,6 +79,11 @@ export default {
       return values.map(t => `${moment(t[this.labelsPropertiesNames]).format('DD/MM/YYYY')}`);
     }
   },
+  methods: {
+    showColor(ev) {
+      this.colorPicker = ev;
+    }
+  }
 };
 </script>
 
